@@ -4,7 +4,7 @@
     @foreach($histoires as $histoire)
         <a href="{{ route('histoires.show', $histoire->id) }}">
             <div>
-                <img src="{{ $histoire->photo }}" alt="{{ $histoire->titre }}">
+                <img src="{{ Storage::url($histoire->photo) }}">
                 <p>{{ $histoire->titre }}</p>
             </div>
         </a>

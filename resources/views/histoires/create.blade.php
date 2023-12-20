@@ -10,7 +10,7 @@
             </ul>
         </div>
     @endif
-
+    @auth
     <form action="{{route('histoires.store')}}" method="POST" enctype="multipart/form-data">
         {!! csrf_field() !!}
         <div >
@@ -52,4 +52,5 @@
             <button type="submit">Valider</button>
         </div>
     </form>
+    @endauth
 @endsection
