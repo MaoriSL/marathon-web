@@ -61,7 +61,6 @@ class HistoireController extends Controller
 
         return view('histoires.show', ['histoire' => $histoireDetails, 'isFavorite' => $isFavorite]);
     }
-}
 
     public function create()
     {
