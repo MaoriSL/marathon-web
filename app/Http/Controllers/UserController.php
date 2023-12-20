@@ -11,26 +11,11 @@ class UserController
 {
     public function profile()
     {
-        $histoires = null;
-        $favorites = null;
+        $user = Auth::user();
+        $favorites = $user->favorites()->get();
 
-        if (Auth::check()) {
-            $user = Auth::user();
-            $histoires = $user->histoires;
-            $favorites = $user->favorites()->with('histoire')->get()->pluck('histoire');
-        }else{
-            $favoriteIds = json_decode(Cookie::get('favorites', '[]'), true);
-            foreach ($favoriteIds as $id) {
-                $favorites[] = Histoire::find($id);
-                if($favorites){
-                    $favorites[] = $histoires;
-                }
-            }
-        }
-
-        return view('user.profile', ['histoires' => $histoires, 'favorites' => $favorites]);
+        return view('user.profile', ['favorites' => $favorites]);
     }
-
     public function show($id)
     {
         $user = User::find($id);

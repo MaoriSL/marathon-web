@@ -22,32 +22,16 @@ class HistoireController extends Controller
     }
     public function addFavoris($id)
     {
-        if (Auth::check()) {
-            $user = Auth::user();
-            $user->favorites()->attach($id);
-        } else {
-            $favorites = json_decode(Cookie::get('favorites', '[]'), true);
-            if (!in_array($id, $favorites)) {
-                $favorites[] = $id;
-            }
-            Cookie::queue('favorites', json_encode($favorites), 60 * 24 * 30); // Expire après 30 jours
-        }
+        $user = Auth::user();
+        $user->favorites()->attach($id);
 
         return back();
     }
 
     public function removeFavoris($id)
     {
-        if (Auth::check()) {
-            $user = Auth::user();
-            $user->favorites()->detach($id);
-        } else {
-            $favorites = json_decode(Cookie::get('favorites', '[]'), true);
-            if (($key = array_search($id, $favorites)) !== false) {
-                unset($favorites[$key]);
-            }
-            Cookie::queue('favorites', json_encode($favorites), 60 * 24 * 30); // Expire après 30 jours
-        }
+        $user = Auth::user();
+        $user->favorites()->detach($id);
 
         return back();
     }

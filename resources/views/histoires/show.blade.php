@@ -4,6 +4,7 @@
 @section('content')
     <div>
         <h1>{{ $histoire->titre }}</h1>
+        @auth
         @if($isFavorite)
             <form method="POST" action="{{ route('favoris.remove', $histoire->id) }}">
                 @csrf
@@ -19,6 +20,7 @@
                 </button>
             </form>
         @endif
+        @endauth
         <p>{{ $histoire->pitch }}</p>
         <img src="{{ $histoire->photo }}">
         <p>Author: <a href="{{ route('user.show', $histoire->user->id) }}">{{ $histoire->user->name }}</a></p>
