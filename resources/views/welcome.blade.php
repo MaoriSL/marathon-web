@@ -14,7 +14,7 @@
             <div class="swiper-wrapper">
                 @foreach($histoires as $histoire)
                 <a class="swiper-slide tuile" href="{{ route('histoires.show', $histoire->id) }}">
-                    <img src="{{ $histoire->photo }}" alt="{{ $histoire->titre }}" data-swiper-material-scale="1.25">
+                    <img src="{{ asset('storage/' . $histoire->photo) }}" alt="{{ $histoire->titre }}">
                     <p>{{ $histoire->titre }}</p>
                     <div class="overlay"></div>
                 </a>
