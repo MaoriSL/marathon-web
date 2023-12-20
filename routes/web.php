@@ -25,3 +25,4 @@ Route::get('/test-vite', function () {
     return view('test-vite');
 })->name("test-vite");
 
+Route::get('/equipes', [\App\Http\Controllers\EquipeController::class, 'index'])->name("equipes");
