@@ -3,6 +3,7 @@
 use App\Http\Controllers\ChapitreController;
 use App\Http\Controllers\EquipeController;
 use App\Http\Controllers\HistoireController;
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -39,3 +40,7 @@ Route::get('/genres/{id}', [HistoireController::class, 'indexGenre'])->name("his
 
 Route::get('/', [HistoireController::class, 'randomStories'])->name('index');
 Route::resource('chapitres', ChapitreController::class);
+
+Route::get('/profile', [UserController::class, 'profile'])->name('user.profile');
+
+Route::post('/histoires/{id}/add', [HistoireController::class,'addFavoris'])->name('favoris.add');
