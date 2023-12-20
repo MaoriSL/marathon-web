@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\EquipeController;
 use App\Http\Controllers\GenreController;
 use App\Http\Controllers\HistoireController;
 use Illuminate\Support\Facades\Route;
@@ -27,8 +28,10 @@ Route::get('/test-vite', function () {
     return view('test-vite');
 })->name("test-vite");
 
-Route::get('/equipes', [\App\Http\Controllers\EquipeController::class, 'index'])->name("equipes");
+Route::get('/equipes', [EquipeController::class, 'index'])->name("equipes");
 
-Route::get('/', [GenreController::class, 'index'])->name("index");
+//Route::get('/', [GenreController::class, 'index'])->name("index");
 
 Route::get('/genres/{id}', [HistoireController::class, 'indexGenre'])->name("histoires.indexGenre");
+
+Route::get('/', [HistoireController::class, 'randomStories'])->name('index');

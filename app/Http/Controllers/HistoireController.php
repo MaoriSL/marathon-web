@@ -12,4 +12,11 @@ class HistoireController extends Controller
         $genre = Genre::find($id);
         return view('histoires.indexGenre', ['histoires' => $histoires, 'genre' => $genre]);
     }
+
+    public function randomStories(){
+        $genres = Genre::all();
+        $histoires = Histoire::inRandomOrder()->limit(5)->get();
+        return view('welcome', ['histoires' => $histoires, 'genres' => $genres]);
+    }
 }
+
