@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\HistoireController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -24,4 +24,6 @@ Route::get('/contact', function () {
 Route::get('/test-vite', function () {
     return view('test-vite');
 })->name("test-vite");
+
+Route::resource('histoires', HistoireController::class);
 
