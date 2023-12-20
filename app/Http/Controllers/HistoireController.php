@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+
 use App\Models\Genre;
 use App\Models\Histoire;
 use Illuminate\Support\Facades\Cookie;
@@ -9,6 +10,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
 use PhpParser\Node\Expr\New_;
+use App\Models\User;
 
 class HistoireController extends Controller
 {
