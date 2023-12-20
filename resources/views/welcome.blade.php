@@ -7,4 +7,8 @@
         </div>
     </div>
 
+    @foreach($genres as $genre)
+        <a href="{{route('histoires.indexGenre', $genre->id)}}"><p>{{ $genre->label }}</p></a>
+    @endforeach
+
 @endsection
