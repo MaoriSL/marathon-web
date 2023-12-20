@@ -17,6 +17,6 @@ class ChapitreController extends Controller
     {
         $chapitreDetails = $chapitre->load('histoire');
 
-        return view('histoire.show', ['chapitre' => $chapitreDetails]);
+        return view('chapitres.show', ['chapitre' => $chapitreDetails]);
     }
 }
