@@ -23,7 +23,6 @@
         @endauth
         <p>{{ $histoire->pitch }}</p>
         <img src="{{ Storage::url($histoire->photo) }}" alt="image histoire">
-        <p>Author: {{ $histoire->user->name }}</p>
         <p>Author: <a href="{{ route('user.show', $histoire->user->id) }}">{{ $histoire->user->name }}</a></p>
         <p>Genre: {{ $histoire->genre->name }}</p>
         <p>Number of completed readings: {{ $histoire->terminees->count() }}</p>
@@ -38,7 +37,7 @@
         <div>
             <p>{{ $avis->contenu }}</p>
             <p>Posté le {{ $avis->created_at}}</p>
-            <p>Posté par : {{$avis->user->name}}</p><br>
+            <p>Posté par : <a href="{{route('user.show', $histoire->user->id)}}">{{$avis->user->name}}</a></p><br>
         </div>
     @endforeach
 
