@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ChapitreController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -25,3 +26,4 @@ Route::get('/test-vite', function () {
     return view('test-vite');
 })->name("test-vite");
 
+Route::get('/chapitres/{chapitre}', [ChapitreController::class, 'show']);
