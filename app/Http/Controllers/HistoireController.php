@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-
+use App\Models\Avis;
 use App\Models\Genre;
 use App\Models\Histoire;
 use Illuminate\Support\Facades\Cookie;
@@ -14,7 +14,6 @@ use App\Models\User;
 
 class HistoireController extends Controller
 {
-
     public function indexGenre($id)
     {
         $histoires = Histoire::where('genre_id', $id)->with('user')->get();
@@ -35,6 +34,19 @@ class HistoireController extends Controller
         return view('welcome', ['histoires' => $histoires, 'genres' => $genres]);
     }
 
+    public function show(Histoire $histoire)
+    {
+        $histoireDetails = $histoire->load('chapitres', 'avis', 'terminees', 'user', 'genre');
+
+        if (Auth::check()) {
+            $isFavorite = Auth::user()->favorites()->where('histoire_id', $histoire->id)->exists();
+        } else {
+            $isFavorite = in_array($histoire->id, json_decode(Cookie::get('favorites', '[]'), true));
+        }
+
+        return view('histoires.show', ['histoire' => $histoireDetails, 'isFavorite' => $isFavorite]);
+    }
+
     public function addFavoris($id)
     {
         $user = Auth::user();
@@ -51,19 +63,6 @@ class HistoireController extends Controller
         return back();
     }
 
-    public function show(Histoire $histoire)
-    {
-        $histoireDetails = $histoire->load('chapitres', 'avis', 'terminees', 'user', 'genre');
-
-        if (Auth::check()) {
-            $isFavorite = Auth::user()->favorites()->where('histoire_id', $histoire->id)->exists();
-        } else {
-            $isFavorite = in_array($histoire->id, json_decode(Cookie::get('favorites', '[]'), true));
-        }
-
-        return view('histoires.show', ['histoire' => $histoireDetails, 'isFavorite' => $isFavorite]);
-    }
-
     public function create()
     {
         $genres = Genre::all();
@@ -72,9 +71,7 @@ class HistoireController extends Controller
 
     public function store(Request $request)
     {
-        $this->validate(
-            $request,
-            [
+        $this->validate($request, [
                 'titre' => 'required|max:255',
                 'pitch' => 'required',
                 'active' => 'required',
@@ -125,4 +122,23 @@ class HistoireController extends Controller
 
         return redirect()->route('profile')->with('success', 'photo');
     }
+
+    public function storeComment(Request $request){
+        $request->validate([
+            'contenu' => 'required',
+            'histoire_id' => 'required|exists:histoires,id',
+        ]);
+
+        $histoireId = $request->input('histoire_id');
+
+        $avis = new Avis();
+        $avis->contenu = $request->input('contenu');
+        $avis->user_id = Auth::id();
+        $avis->histoire_id = $request->input('histoire_id');
+
+        $avis->save();
+
+        return back()->with('success', 'Avis ajouté avec succès');
+    }
 }
+

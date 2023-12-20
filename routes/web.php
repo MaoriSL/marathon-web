@@ -33,8 +33,7 @@ Route::get('/equipe', [EquipeController::class, 'index'])->name("equipe");
 
 //Route::get('/', [GenreController::class, 'index'])->name("index");
 Route::resource('histoires', HistoireController::class);
-Route::post('/histoires/{id}/remove', [HistoireController::class,'removeFavoris'])->name('favoris.remove');
-Route::post('/histoires/{id}/add', [HistoireController::class,'addFavoris'])->name('favoris.add');
+//Route::post('histoire.show', [HistoireController::class, 'store'])->name('histoires.store');
 
 Route::get('/genres/{id}', [HistoireController::class, 'indexGenre'])->name("histoires.indexGenre");
 
@@ -46,7 +45,11 @@ Route::get('/profile', [UserController::class, 'profile'])->name('user.profile')
 
 Route::post('/histoires/{id}/add', [HistoireController::class,'addFavoris'])->name('favoris.add');
 
+Route::post('/histoires/{id}/remove', [HistoireController::class,'removeFavoris'])->name('favoris.remove');
+
 Route::get('/user/{id}', [UserController::class, 'show'])->name('user.show');
 
 
 Route::post('/histoires/updateImage', [HistoireController::class, 'updateImage'])->name('histoire.updateImage');
+
+Route::post('/histoires/storeCommentaire',[HistoireController::class ,'storeComment'])->name('histoires.storeComment');
