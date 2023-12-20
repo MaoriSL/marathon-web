@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ChapitreController;
 use App\Http\Controllers\EquipeController;
 use App\Http\Controllers\HistoireController;
 use Illuminate\Support\Facades\Route;
@@ -36,3 +37,4 @@ Route::resource('histoires', HistoireController::class);
 Route::get('/genres/{id}', [HistoireController::class, 'indexGenre'])->name("histoires.indexGenre");
 
 Route::get('/', [HistoireController::class, 'randomStories'])->name('index');
+Route::resource('chapitres', ChapitreController::class);
