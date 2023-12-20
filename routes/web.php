@@ -41,3 +41,5 @@ Route::get('/', [HistoireController::class, 'randomStories'])->name('index');
 Route::resource('chapitres', ChapitreController::class);
 
 Route::post('/histoires/updateImage', [HistoireController::class, 'updateImage'])->name('histoire.updateImage');
+
+Route::post('/histoires/storeCommentaire',[HistoireController::class ,'storeComment'])->name('histoires.storeComment');

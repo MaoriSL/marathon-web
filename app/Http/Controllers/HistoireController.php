@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Avis;
 use App\Models\Genre;
 use App\Models\Histoire;
 use Illuminate\Http\Request;
@@ -98,6 +99,25 @@ class HistoireController extends Controller
 
         return redirect()->route('profile')->with('success', 'photo');
     }
+
+    public function storeComment(Request $request){
+        $request->validate([
+            'contenu' => 'required',
+            'histoire_id' => 'required|exists:histoires,id',
+        ]);
+
+        $histoireId = $request->input('histoire_id');
+
+        $avis = new Avis();
+        $avis->contenu = $request->input('contenu');
+        $avis->user_id = Auth::id();
+        $avis->histoire_id = $request->input('histoire_id');
+
+        $avis->save();
+
+        return back()->with('success', 'Avis ajouté avec succès');
+    }
+
 
 }
 
