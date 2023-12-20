@@ -10,7 +10,7 @@
         <h2>
             Histoires aléatoires
         </h2>
-        <div class="swiper">
+        <div class="swiper swiper1">
             <div class="swiper-wrapper">
                 @foreach($histoires as $histoire)
                 <a class="swiper-slide tuile" href="{{ route('histoires.show', $histoire->id) }}">
@@ -39,11 +39,16 @@
     </div>
     <div class="genre">
         <h2>Genres</h2>
-        <div class="swiper2">
-            <div class="swiper-wrapper2">
+        <div class="swiper swiper2">
+            <div class="swiper-wrapper">
                 @foreach($genres as $genre)
-                <a class="swipper-slide2" href="{{route('histoires.indexGenre', $genre->id)}}">
+                <a class="swiper-slide" href="{{route('histoires.indexGenre', $genre->id)}}">
                     <p>{{ $genre->label }}</p>
+                    <div class="text-h">
+                        <p class="text-h1">{{ $genre->label }}</p>
+                        <p class="text-h2">{{ $genre->label }}</p>
+                        <p class="text-h3">{{ $genre->label }}</p>
+                    </div>
                 </a>
                 @endforeach
             </div>
@@ -51,7 +56,7 @@
     </div>
 </div>
 <script>
-    const swiper = new Swiper('.swiper', {
+    const swiper = new Swiper('.swiper1', {
         // Optional parameters
         direction: 'horizontal',
         loop: true,
