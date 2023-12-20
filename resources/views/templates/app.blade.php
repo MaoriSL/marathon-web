@@ -22,7 +22,8 @@
             <a href="{{route('index')}}">Accueil</a>
 
             @auth
-            <a href="">{{Auth::user()->name}}</a>
+            <a href="{{route('user.profile')}}">{{Auth::user()->name}}</a>
+            <a href=" {{route('histoires.index')}}">Catalogue</a>
             <a href="{{route("logout")}}" onclick="document.getElementById('logout').submit(); return false;">Logout</a>
             <form id="logout" action="{{route("logout")}}" method="post">
                 @csrf
