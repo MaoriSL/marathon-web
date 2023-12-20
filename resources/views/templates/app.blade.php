@@ -20,7 +20,7 @@
         <img src="" alt="NaraVerse">
         <nav>
             <a href="{{route('index')}}">Accueil</a>
-
+            <a href="{{route('histoires.create')}}">Créer une histoire</a>
             @auth
             {{Auth::user()->name}}
             <a href="{{route("logout")}}" onclick="document.getElementById('logout').submit(); return false;">Logout</a>
