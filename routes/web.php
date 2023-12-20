@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AvisController;
 use App\Http\Controllers\ChapitreController;
 use App\Http\Controllers\EquipeController;
 use App\Http\Controllers\HistoireController;
@@ -33,8 +34,8 @@ Route::get('/equipe', [EquipeController::class, 'index'])->name("equipe");
 
 //Route::get('/', [GenreController::class, 'index'])->name("index");
 Route::resource('histoires', HistoireController::class);
-Route::post('/histoires/{id}/remove', [HistoireController::class,'removeFavoris'])->name('favoris.remove');
-Route::post('/histoires/{id}/add', [HistoireController::class,'addFavoris'])->name('favoris.add');
+Route::post('/histoires/{id}/remove', [HistoireController::class, 'removeFavoris'])->name('favoris.remove')->middleware('auth');
+Route::post('/histoires/{id}/add', [HistoireController::class, 'addFavoris'])->name('favoris.add')->middleware('auth');
 
 Route::get('/genres/{id}', [HistoireController::class, 'indexGenre'])->name("histoires.indexGenre");
 
@@ -44,9 +45,11 @@ Route::resource('chapitres', ChapitreController::class);
 
 Route::get('/profile', [UserController::class, 'profile'])->name('user.profile');
 
-Route::post('/histoires/{id}/add', [HistoireController::class,'addFavoris'])->name('favoris.add');
+Route::post('/histoires/{id}/add', [HistoireController::class, 'addFavoris'])->name('favoris.add');
 
 Route::get('/user/{id}', [UserController::class, 'show'])->name('user.show');
+
+Route::post('/histoires/{id}', [AvisController::class, 'store'])->name('avis.store');
 
 
 Route::post('/histoires/updateImage', [HistoireController::class, 'updateImage'])->name('histoire.updateImage');

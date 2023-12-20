@@ -39,7 +39,32 @@
         @yield("content")
     </main>
 
-    <footer>IUT de Lens</footer>
+    <footer class="foot">
+        <div class="foot1">
+            <h2>Navigation</h2>
+            <ul>
+                <li><a href="{{route('index')}}">Accueil</a></li>
+                <li><a href="{{route('histoires.index')}}">Catalogue</a></li>
+                <li><a href="{{route('contact')}}">Contact</a></li>
+                <li><a href="{{route('equipe')}}">Equipe</a></li>
+            </ul>
+        </div>
+        <div class="foot3">
+            <h2>Reseaux sociaux</h2>
+            <ul>
+                <li><a href="#">Facebook</a></li>
+                <li><a href="#">Twitter</a></li>
+            </ul>
+        </div>
+        <div class="foot2">
+            <h2>Liens</h2>
+            <ul>
+                <li><a href="#">Mentions légales</a></li>
+                <li><a href="#">Politique de confidentialité</a></li>
+                <li><a href="#">Conditions d'utilisation</a></li>
+            </ul>
+        </div>
+    </footer>
 </body>
 
 </html>

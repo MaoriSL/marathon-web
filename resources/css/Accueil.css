@@ -44,7 +44,7 @@ body header nav a {
     align-items: center;
     justify-content: center;
     padding: 0.5rem 0;
-    width: 100%;
+    /* width: 100%; */
     margin: 0 0.5rem
 }
 
@@ -157,6 +157,11 @@ body header nav a.active {
 .swiper2 {
     width: 100%;
     height: 300px;
+    margin-top: 2rem;
+    border-radius: 2rem;
+    overflow: hidden;
+    margin: 2rem auto;
+    padding: 2rem;
 
 }
 
@@ -286,4 +291,40 @@ body header nav a.active {
 
 .Infos .Right ul li span {
     font-weight: 600;
+}
+
+.foot {
+    background-color: #ffffff;
+    border-top: 1px solid #e7e7e7;
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+    z-index: 1;
+    border-radius: 2rem;
+    text-align: center;
+
+}
+
+.foot ul {
+    margin: 0;
+    padding: 0;
+}
+
+.foot ul li {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.foot li a {
+    color: #000;
+    font-size: 1.2rem;
+    font-weight: 600;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.5rem 0;
+    /* width: 100%; */
+    margin: 0 0.5rem
 }
