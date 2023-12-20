@@ -18,5 +18,11 @@ class HistoireController extends Controller
         $histoires = Histoire::inRandomOrder()->limit(5)->get();
         return view('welcome', ['histoires' => $histoires, 'genres' => $genres]);
     }
+    public function show(Histoire $histoire)
+    {
+        $histoireDetails = $histoire->load('chapitres', 'avis', 'terminees', 'user', 'genre');
+
+        return view('histoires.show', ['histoire' => $histoireDetails]);
+    }
 }
 

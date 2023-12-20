@@ -2,7 +2,7 @@
 
 @section('content')
     @foreach($histoires as $histoire)
-            <a href="#">
+            <a href="{{ route('histoires.show', $histoire->id) }}">
                     <img src="{{ $histoire->photo }}" alt="{{ $histoire->titre }}">
                     <p>{{ $histoire->titre }}</p>
             </a>
