@@ -21,7 +21,7 @@
         @endif
         <p>{{ $histoire->pitch }}</p>
         <img src="{{ $histoire->photo }}">
-        <p>Author: {{ $histoire->user->name }}</p>
+        <p>Author: <a href="{{ route('user.show', $histoire->user->id) }}">{{ $histoire->user->name }}</a></p>
         <p>Genre: {{ $histoire->genre->name }}</p>
         <p>Number of completed readings: {{ $histoire->terminees->count() }}</p>
         <p>Number of positive reviews: {{ $histoire->avis->where('positive', true)->count() }}</p>

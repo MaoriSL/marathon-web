@@ -44,3 +44,5 @@ Route::resource('chapitres', ChapitreController::class);
 Route::get('/profile', [UserController::class, 'profile'])->name('user.profile');
 
 Route::post('/histoires/{id}/add', [HistoireController::class,'addFavoris'])->name('favoris.add');
+
+Route::get('/user/{id}', [UserController::class, 'show'])->name('user.show');

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Histoire;
+use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Cookie;
 
@@ -28,5 +29,13 @@ class UserController
         }
 
         return view('user.profile', ['histoires' => $histoires, 'favorites' => $favorites]);
+    }
+
+    public function show($id)
+    {
+        $user = User::find($id);
+        $histoires = $user->mesHistoires()->get();
+
+        return view('user.show', ['user' => $user, 'histoires' => $histoires]);
     }
 }
