@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\HistoireController;
 use App\Models\Histoire;
 use Illuminate\Support\Facades\Route;
 
@@ -27,4 +28,4 @@ Route::get('/test-vite', function () {
 })->name("test-vite");
 
 
-Route::get('/', [App\Http\Controllers\HistoireController::class, 'randomStories'])->name('index');
+Route::get('/', [HistoireController::class, 'randomStories'])->name('index');
