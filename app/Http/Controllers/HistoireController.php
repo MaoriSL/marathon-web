@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Genre;
 use App\Models\Histoire;
+use Illuminate\Support\Facades\Cookie;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
@@ -32,11 +33,35 @@ class HistoireController extends Controller
         return view('welcome', ['histoires' => $histoires, 'genres' => $genres]);
     }
 
-    public function show(int $id)
+    public function addFavoris($id)
     {
-        $histoire = Histoire::find($id);
-        return view('histoires.show', ['histoire' => $histoire]);
+        $user = Auth::user();
+        $user->favorites()->attach($id);
+
+        return back();
     }
+
+    public function removeFavoris($id)
+    {
+        $user = Auth::user();
+        $user->favorites()->detach($id);
+
+        return back();
+    }
+
+    public function show(Histoire $histoire)
+    {
+        $histoireDetails = $histoire->load('chapitres', 'avis', 'terminees', 'user', 'genre');
+
+        if (Auth::check()) {
+            $isFavorite = Auth::user()->favorites()->where('histoire_id', $histoire->id)->exists();
+        } else {
+            $isFavorite = in_array($histoire->id, json_decode(Cookie::get('favorites', '[]'), true));
+        }
+
+        return view('histoires.show', ['histoire' => $histoireDetails, 'isFavorite' => $isFavorite]);
+    }
+}
 
     public function create()
     {
