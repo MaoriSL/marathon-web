@@ -5,10 +5,12 @@ namespace App\Http\Controllers;
 use App\Models\Avis;
 use App\Models\Genre;
 use App\Models\Histoire;
+use Illuminate\Support\Facades\Cookie;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
 use PhpParser\Node\Expr\New_;
+use App\Models\User;
 
 class HistoireController extends Controller
 {
@@ -28,14 +30,37 @@ class HistoireController extends Controller
     public function randomStories()
     {
         $genres = Genre::all();
-        $histoires = Histoire::inRandomOrder()->limit(5)->get();
+        $histoires = Histoire::inRandomOrder()->limit(7)->get();
         return view('welcome', ['histoires' => $histoires, 'genres' => $genres]);
     }
 
-    public function show(int $id)
+    public function show(Histoire $histoire)
     {
-        $histoire = Histoire::find($id);
-        return view('histoires.show', ['histoire' => $histoire]);
+        $histoireDetails = $histoire->load('chapitres', 'avis', 'terminees', 'user', 'genre');
+
+        if (Auth::check()) {
+            $isFavorite = Auth::user()->favorites()->where('histoire_id', $histoire->id)->exists();
+        } else {
+            $isFavorite = in_array($histoire->id, json_decode(Cookie::get('favorites', '[]'), true));
+        }
+
+        return view('histoires.show', ['histoire' => $histoireDetails, 'isFavorite' => $isFavorite]);
+    }
+
+    public function addFavoris($id)
+    {
+        $user = Auth::user();
+        $user->favorites()->attach($id);
+
+        return back();
+    }
+
+    public function removeFavoris($id)
+    {
+        $user = Auth::user();
+        $user->favorites()->detach($id);
+
+        return back();
     }
 
     public function create()
@@ -70,8 +95,6 @@ class HistoireController extends Controller
             $photo = $request->file('photo');
             $path = $photo->store('images', 'public');
             $newhistoire->photo = $path;
-
-
         }
         $newhistoire->save();
 
@@ -117,7 +140,5 @@ class HistoireController extends Controller
 
         return back()->with('success', 'Avis ajouté avec succès');
     }
-
-
 }
 
