@@ -1,5 +1,5 @@
 <x-layout>
-    <img src="/images/logo.jpg" alt="Logo de l'entreprise">
+    <img src="/~but23_groupe8/images/logo.jpg" alt="Logo de l'entreprise">
     <h1>{{ $equipes['nomEquipe'] }}</h1>
     <img src="{{ $equipes['logo'] }}" alt="Logo de l'équipe">
     <p>{{ $equipes['slogan'] }}</p>
