@@ -29,6 +29,10 @@ class User extends Authenticatable {
         return $this->belongsToMany(Histoire::class, 'lectures')->using(Lecture::class);
     }
 
+    public function favorites(){
+        return $this->belongsToMany(Histoire::class, 'favorites');
+    }
+
 
     /**
      * The attributes that are mass assignable.

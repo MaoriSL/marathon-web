@@ -4,6 +4,23 @@
 @section('content')
     <div>
         <h1>{{ $histoire->titre }}</h1>
+        @auth
+        @if($isFavorite)
+            <form method="POST" action="{{ route('favoris.remove', $histoire->id) }}">
+                @csrf
+                <button type="submit" style="background: none; border: none; padding: 0; color: #e3342f;">
+                    ❤️
+                </button>
+            </form>
+        @else
+            <form method="POST" action="{{ route('favoris.add', $histoire->id) }}">
+                @csrf
+                <button type="submit" style="background: none; border: none; padding: 0; color: #e3342f;">
+                    🤍
+                </button>
+            </form>
+        @endif
+        @endauth
         <p>{{ $histoire->pitch }}</p>
         <img src="{{ Storage::url($histoire->photo) }}" alt="image histoire">
         <p>Author: {{ $histoire->user->name }}</p>
