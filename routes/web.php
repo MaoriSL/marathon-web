@@ -26,4 +26,4 @@ Route::get('/test-vite', function () {
     return view('test-vite');
 })->name("test-vite");
 
-Route::get('/chapitres/{chapitre}', [ChapitreController::class, 'show']);
+Route::resource('chapitres', ChapitreController::class);
