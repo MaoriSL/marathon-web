@@ -1,7 +1,6 @@
 @extends('templates.app')
 
 @section('content')
-
 <div>
     <h1>{{ $histoire->titre }}</h1>
     @auth
@@ -30,15 +29,5 @@
     @if(!empty($histoire->premier()->id))
     <a href="{{ route('chapitres.show', ['chapitre' => $histoire->premier()->id]) }}">Start Reading</a>
     @endif
-
-    <div class="avis-Form">
-        <h2>Donnez votre avis</h2>
-        <form method="POST" action="{{ route('avis.store', $histoire->id) }}">
-            @csrf
-            <label for="avis">Avis</label>
-            <textarea name="avis" id="avis" cols="30" rows="10"></textarea>
-            <button type="submit">Submit</button>
-        </form>
-    </div>
 </div>
 @endsection
