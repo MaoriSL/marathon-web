@@ -24,7 +24,6 @@
         <p>{{ $histoire->pitch }}</p>
         <img src="{{ Storage::url($histoire->photo) }}" alt="image histoire">
         <p>Author: {{ $histoire->user->name }}</p>
-        <img src="{{ Storage::url($histoire->photo) }}">
         <p>Author: <a href="{{ route('user.show', $histoire->user->id) }}">{{ $histoire->user->name }}</a></p>
         <p>Genre: {{ $histoire->genre->name }}</p>
         <p>Number of completed readings: {{ $histoire->terminees->count() }}</p>
