@@ -21,6 +21,7 @@
         <nav>
             <a href="{{route('index')}}">Accueil</a>
             @auth
+            <a href="{{route('histoires.create')}}">Créer une histoire</a>
             <a href="{{route('user.profile')}}">{{Auth::user()->name}}</a>
             <a href=" {{route('histoires.index')}}">Catalogue</a>
             <a href="{{route("logout")}}" onclick="document.getElementById('logout').submit(); return false;">Logout</a>
