@@ -32,7 +32,8 @@ Route::get('/equipes', [EquipeController::class, 'index'])->name("equipes");
 
 //Route::get('/', [GenreController::class, 'index'])->name("index");
 Route::resource('histoires', HistoireController::class);
-
+Route::post('/histoires/{id}/remove', [HistoireController::class,'removeFavoris'])->name('favoris.remove');
+Route::post('/histoires/{id}/add', [HistoireController::class,'addFavoris'])->name('favoris.add');
 
 Route::get('/genres/{id}', [HistoireController::class, 'indexGenre'])->name("histoires.indexGenre");
 
