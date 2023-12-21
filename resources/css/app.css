@@ -3,10 +3,6 @@ html {
     min-height: 100%;
 }
 
-body {
-    /* Margin bottom by footer height */
-    margin-bottom: 30px;
-}
 
 main {
     min-height: 80vh;
@@ -14,14 +10,4 @@ main {
     height: auto;
     /*align-items: center;*/
     /*justify-content: center;*/
-}
-
-footer {
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-
-    /* Set the fixed height of the footer here */
-    height: 30px;
-    background-color: #f5f5f5;
 }
