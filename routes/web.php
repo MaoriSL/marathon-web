@@ -60,6 +60,13 @@ Route::post('/histoires/{histoire}/private', [HistoireController::class, 'makePr
 
 Route::delete('/avis/{avis}', [AvisController::class, 'destroyComment'])->name('avis.destroyComment');
 
+Route::get('/test-markdown', function () {
+    $markdownText = "# Titre\n\n**Texte en gras**\n\n*Texte en italique*\n\n[Un lien](http://example.com)";
+    $parsedown = new Parsedown();
+    $htmlText = $parsedown->text($markdownText);
+    return view('test-markdown', ['htmlText' => $htmlText]);
+})->name('test-markdown');
+
 Route::post('/profile/avatar', [App\Http\Controllers\UserController::class, 'updateAvatar'])->name('profile.updateAvatar');
 
 Route::post('/profile/avatar/delete', [App\Http\Controllers\UserController::class, 'deleteAvatar'])->name('profile.deleteAvatar');

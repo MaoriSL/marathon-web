@@ -6,7 +6,10 @@
         <p>{{ $chapitre->texte }}</p>
         <img src="{{ $chapitre->media }}">
         <p>{{ $chapitre->question }}</p>
-        @foreach($chapitre->suivants as $suivant)
+        <h1>{{ $chapitre->titre }}</h1>
+        <div>{!! $chapitre->texte_html !!}</div>
+
+    @foreach($chapitre->suivants as $suivant)
 
         @endforeach
     </div>

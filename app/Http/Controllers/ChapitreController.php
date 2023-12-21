@@ -5,12 +5,15 @@ namespace App\Http\Controllers;
 use App\Models\Chapitre;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Parsedown;
 
 class ChapitreController extends Controller
 {
 
     public function show(Chapitre $chapitre)
     {
+        $parsedown = new Parsedown();
+        $chapitre->texte_html = $parsedown->text($chapitre->texte);
         $user = Auth::user();
 
         if ($chapitre->suivants->isEmpty()) {
@@ -58,6 +61,14 @@ class ChapitreController extends Controller
 
 
         return back()->with('success', 'Chapitre créé avec succès');
+        $parsedown = new Parsedown();
+        $chapitre->texte_html = $parsedown->text($request->input('texte'));
+
+        $chapitre->save();
+
+        return back()->with('success', 'Chapitre créé avec succès');
+
+
     }
 
     public function link(Request $request){
