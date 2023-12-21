@@ -8,8 +8,22 @@ use Illuminate\Support\Facades\Auth;
 
 class ChapitreController extends Controller
 {
+
     public function show(Chapitre $chapitre)
     {
+        $user = Auth::user();
+
+        if ($chapitre->suivants->isEmpty()) {
+            $terminees = $user->terminees()->where('histoire_id', $chapitre->histoire_id)->first();
+
+            if ($terminees) {
+                $terminees->pivot->nombre += 1;
+                $terminees->pivot->save();
+            } else {
+                $user->terminees()->attach($chapitre->histoire_id, ['nombre' => 1]);
+            }
+        }
+
         $chapitreDetails = $chapitre->load('histoire');
 
         return view('chapitres.show', ['chapitre' => $chapitreDetails]);
@@ -60,4 +74,6 @@ class ChapitreController extends Controller
 
         return back()->with('success', 'Chapitre lié avec succès');
     }
+
+
 }
