@@ -54,3 +54,8 @@ Route::post('/histoires/storeCommentaire', [HistoireController::class, 'storeCom
 Route::post('/histoires/storeChapitre', [ChapitreController::class, 'store'])->name('chapitre.store');
 
 Route::get('/histoires/{id}/editHistoire', [HistoireController::class, 'editChapitre'])->name('chapitre.edit');
+
+Route::post('/histoires/{histoire}/public', [HistoireController::class, 'makePublic'])->name('histoires.makePublic');
+Route::post('/histoires/{histoire}/private', [HistoireController::class, 'makePrivate'])->name('histoires.makePrivate');
+
+Route::delete('/avis/{avis}', [AvisController::class, 'destroyComment'])->name('avis.destroyComment');

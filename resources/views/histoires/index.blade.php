@@ -1,6 +1,30 @@
 @extends('templates.app')
 
 @section('content')
+<div class="global-container">
+
+    <h2>Catalogue</h2>
+    <!-- Navigation -->
+    <div class="global-nav">
+        <div class="nav">
+            <div class="nav-item">
+                <a href="{{ route('histoires.index') }}">Toutes les histoires</a>
+            </div>
+
+            <div class="nav-item">
+                <a href="{{ route('histoires.index') }}">Histoire commencées</a>
+            </div>
+
+            <div class="nav-item">
+                <a href="{{ route('histoires.index') }}">Ma Liste</a>
+            </div>
+
+            <div class="nav-item">
+                <a href="{{ route('histoires.index') }}">Histoire Terminées</a>
+            </div>
+
+        </div>
+    </div>
 <div class="global-grid">
     @foreach($histoires as $histoire)
     <div class="Histoire">
@@ -37,4 +61,5 @@
     </div>
 
     @endforeach
+</div>
     @endsection
