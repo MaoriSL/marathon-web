@@ -22,7 +22,7 @@
                 @foreach($histoires as $histoire)
                 <a class="swiper-slide tuile" href="{{ route('histoires.show', $histoire->id) }}">
                     <div class="infos">
-                        <img src="/~but23_groupe8/storage/images{{ $histoire->photo }}" alt="{{ $histoire->titre }}">
+                        <img src="/~but23_groupe8/images/storage/{{ $histoire->photo }}" alt="{{ $histoire->titre }}">
                         <p>{{ $histoire->titre }}</p>
                         <div class="overlay"></div>
                     </div>
