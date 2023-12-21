@@ -6,7 +6,7 @@
     <div class="Histoire">
         <a href="{{ route('histoires.show', $histoire->id) }}">
             <div>
-                <img src="/~but23_groupe8/{{ Storage::url($histoire->photo) }}">
+                <img src="/~but23_groupe8{{ Storage::url($histoire->photo) }}">
             </div>
         </a>
         <div class="Histoire-Info">
