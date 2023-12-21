@@ -18,7 +18,9 @@
     margin: 2rem;
     padding: 2rem;
     width: fit-content;
-    height: fit-content;
+    height: 91vh;
+    min-width: 52vh;
+    min-height: 52vh;
     background-color: #ffff;
     filter: grayscale(100%);
     opacity: 0.5;
