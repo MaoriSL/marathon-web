@@ -2,7 +2,6 @@
 
 
 @section('content')
-<img src="/~but23_groupe8/images/logo.png" alt="Logo de l'entreprise">
 <!-- <img src="/~but23_groupe8/images/logo.jpg" alt="Logo de l'entreprise"> -->
 <div class="Info-equpes">
     <h1>{{ $equipes['nomEquipe'] }}</h1>
