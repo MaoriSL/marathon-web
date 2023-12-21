@@ -5,11 +5,18 @@ namespace App\Http\Controllers;
 use App\Models\Chapitre;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 use Parsedown;
+use function Laravel\Prompts\table;
 
 class ChapitreController extends Controller
 {
-
+    /**
+     * Display the specified resource.
+     *
+     * @param  \App\Models\Chapitre  $chapitre
+     * @return \Illuminate\Http\Response
+     */
     public function show(Chapitre $chapitre)
     {
         $parsedown = new Parsedown();
@@ -47,11 +54,7 @@ class ChapitreController extends Controller
         $chapitre->media = 'images/logo.jpg';
         $chapitre->question = $request->input('question');
         $chapitre->histoire_id = $request->input('histoire_id');
-        if(isset($request->premier) && $request->premier == 'on'){
-            $chapitre->premier = 1;
-        } else {
-            $chapitre->premier = 0;
-        }
+        $chapitre->premier = $request->has('active') ? 1 : 0;
         if($request->hasFile('media')){
             $media = $request->file('media');
             $path = $media->store('images', 'public');
@@ -72,19 +75,19 @@ class ChapitreController extends Controller
     }
 
     public function link(Request $request){
+        // Validation des données
         $request->validate([
-            'chapitreSrc_id' => 'required|exists:chapitres,id',
-            'chapitreDest_id' => 'required|exists:chapitres,id',
+            'chapitre_source_id' => 'required|exists:chapitres,id',
+            'chapitre_destination_id' => 'required|exists:chapitres,id',
             'reponse' => 'required',
         ]);
+        DB::table('suites')->insert([
+            'chapitre_source_id' => $request->chapitre_source_id,
+            'chapitre_destination_id' => $request->chapitre_destination_id,
+            'reponse' => $request->reponse,
 
-        $chapitreSrc = Chapitre::find($request->input('chapitreSrc_id'));
-        $chapitreDest = Chapitre::find($request->input('chapitreDest_id'));
-
-        $chapitreSrc->suivant()->attach($chapitreDest->id, ['reponse' => $request->input('reponse')]);
-
-        return back()->with('success', 'Chapitre lié avec succès');
+        ]);
+        // Redirection vers la page précédente avec un message de succès
+        return back();
     }
-
-
 }
