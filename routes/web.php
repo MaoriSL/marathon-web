@@ -70,3 +70,5 @@ Route::get('/test-markdown', function () {
 Route::post('/profile/avatar', [App\Http\Controllers\UserController::class, 'updateAvatar'])->name('profile.updateAvatar');
 
 Route::post('/profile/avatar/delete', [App\Http\Controllers\UserController::class, 'deleteAvatar'])->name('profile.deleteAvatar');
+
+Route::post('/chapitres/link', [ChapitreController::class, 'link'])->name('chapitres.link');
