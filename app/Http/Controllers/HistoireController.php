@@ -71,9 +71,7 @@ class HistoireController extends Controller
 
     public function store(Request $request)
     {
-        $this->validate(
-            $request,
-            [
+        $this->validate($request, [
                 'titre' => 'required|max:255',
                 'pitch' => 'required',
                 'active' => 'required',
@@ -125,8 +123,7 @@ class HistoireController extends Controller
         return redirect()->route('profile')->with('success', 'photo');
     }
 
-    public function storeComment(Request $request)
-    {
+    public function storeComment(Request $request){
         $request->validate([
             'contenu' => 'required',
             'histoire_id' => 'required|exists:histoires,id',
@@ -144,6 +141,11 @@ class HistoireController extends Controller
         return back()->with('success', 'Avis ajouté avec succès');
     }
 
+    public function editChapitre($id){
+        $histoire = Histoire::find($id);
+        return view('histoires.edit', ['histoire' => $histoire]);
+    }
+
     public function destroy(Histoire $histoire)
     {
         if (Auth::id() !== $histoire->user_id) {
@@ -153,6 +155,22 @@ class HistoireController extends Controller
         $histoire->delete();
 
         return redirect()->route('histoires.index')->with('success', 'Histoire supprimée avec succès');
+    }
+
+    public function makePublic(Histoire $histoire)
+    {
+        $histoire->active = 1;
+        $histoire->save();
+
+        return redirect()->back()->with('success', 'Histoire rendue publique');
+    }
+
+    public function makePrivate(Histoire $histoire)
+    {
+        $histoire->active = 0;
+        $histoire->save();
+
+        return redirect()->back()->with('success', 'Histoire rendue privée');
     }
 
 }

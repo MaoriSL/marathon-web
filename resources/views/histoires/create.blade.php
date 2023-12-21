@@ -48,12 +48,6 @@
             <label for="photo"><strong>Photo :</strong></label>
             <input type="file" name="photo" accept="image/*">
         </div>
-
-        {{-- Valide --}}
-        <div>
-            <label for="active"><strong>Publique :</strong></label>
-            <input type="checkbox" name="active" id="active" value="1">
-        </div>
         <div>
             <button type="submit">Valider</button>
         </div>
