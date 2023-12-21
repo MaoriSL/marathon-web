@@ -5,6 +5,7 @@
     <div class="Intro">
         <h1>Bienvenue sur NaraVerse</h1>
         <p>Le site de référence pour les histoires dont vous êtes le héros</p>
+        <p class="lorem">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Esse, accusamus ipsum iure dolor harum ipsa consequatur obcaecati deserunt perspiciatis quia fugit dolore, nesciunt eligendi doloribus animi officia doloremque veniam necessitatibus?</p>
     </div>
     <div class="global-swiper">
         <h2>
@@ -14,9 +15,11 @@
             <div class="swiper-wrapper">
                 @foreach($histoires as $histoire)
                 <a class="swiper-slide tuile" href="{{ route('histoires.show', $histoire->id) }}">
-                    <img src="{{ asset('storage/' . $histoire->photo) }}" alt="{{ $histoire->titre }}">
-                    <p>{{ $histoire->titre }}</p>
-                    <div class="overlay"></div>
+                    <div class="infos">
+                        <img src="{{ asset('storage/' . $histoire->photo) }}" alt="{{ $histoire->titre }}">
+                        <p>{{ $histoire->titre }}</p>
+                        <div class="overlay"></div>
+                    </div>
                 </a>
                 @endforeach
             </div>
@@ -25,7 +28,7 @@
     <div class="Infos" style="display: flex;">
         <div class="Left">
             <h2>C'est quoi NaraVerse</h2>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab vel doloribus vitae animi, eos unde alias aut architecto tempora expedita quos dolores qui asperiores est, iste rerum quis similique iusto.
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab vel doloribus vitae animi, eos unde alias aut architecto tempora expedita quos dolores qui asperiores est, iste rerum quis similique iusto.</p>
         </div>
         <div class="Right">
             <h2> Fonctionnalitées des membres </h2>
@@ -34,9 +37,13 @@
                 <li>Commenter des Histoires</li>
                 <li>Reprendre la lecture</li>
                 <li>Créer sa propre aventure</li>
+                <a class="register" href="{{route('register')}}">
+                    <li>S'inscrire</li>
+                </a>
             </ul>
         </div>
     </div>
+
     <div class="genre">
         <h2>Genres</h2>
         <div class="swiper swiper2">
@@ -44,11 +51,9 @@
                 @foreach($genres as $genre)
                 <a class="swiper-slide" href="{{route('histoires.indexGenre', $genre->id)}}">
                     <p>{{ $genre->label }}</p>
-                    <div class="text-h">
-                        <p class="text-h1">{{ $genre->label }}</p>
-                        <p class="text-h2">{{ $genre->label }}</p>
-                        <p class="text-h3">{{ $genre->label }}</p>
-                    </div>
+                    <p style="writing-mode:horizontal-tb; margin-left:-1rem;
+                    font-size:xx-large;">{{ $genre->label }}</p>
+
                 </a>
                 @endforeach
             </div>
@@ -66,7 +71,7 @@
         autoplay: {
             delay: 600,
         },
-
+        smooth: true,
         breakpoints: {
             320: {
                 slidesPerView: 1,
