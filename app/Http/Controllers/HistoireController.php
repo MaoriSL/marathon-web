@@ -23,7 +23,7 @@ class HistoireController extends Controller
 
     public function index()
     {
-        $histoires = Histoire::all();
+        $histoires = Histoire::where('active', 1)->get();
         return view('histoires.index', ['histoires' => $histoires]);
     }
 
@@ -86,7 +86,7 @@ class HistoireController extends Controller
         $newhistoire->titre = $request->input('titre');
         $newhistoire->pitch = $request->input('pitch');
         $newhistoire->photo = 'images/logo.jpg';
-        $newhistoire->active = $request->input('active');
+        $newhistoire->active = (int)$request->boolean('active');
         $newhistoire->genre_id = $request->input('genre_id');
         $newhistoire->user_id = $request->input('user_id');
 
