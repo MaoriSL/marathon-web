@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\Cookie;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
+use Parsedown;
 use PhpParser\Node\Expr\New_;
 use App\Models\User;
 
@@ -36,6 +37,10 @@ class HistoireController extends Controller
 
     public function show(Histoire $histoire)
     {
+
+        $parsedown = new Parsedown();
+        $histoire->pitch_html = $parsedown->text($histoire->pitch);
+
         $histoireDetails = $histoire->load('chapitres', 'avis', 'terminees', 'user', 'genre');
 
         if (Auth::check()) {
@@ -96,6 +101,9 @@ class HistoireController extends Controller
             $path = $photo->store('images', 'public');
             $newhistoire->photo = $path;
         }
+        $parsedown = new Parsedown();
+        $newhistoire->pitch_html = $parsedown->text($request->input('pitch'));
+
         $newhistoire->save();
 
         return redirect()->route('histoires.show', ['histoire' => $newhistoire->id]);

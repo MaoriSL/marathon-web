@@ -12,7 +12,7 @@
         </div>
         <div class="Histoires-infos">
             <div class="Histoire-desc">
-                <p>{{ $histoire->pitch }}</p>
+                <p>{!! $histoire->pitch_html !!}</p>
             </div>
             <p>
                 <i class="fas fa-marker"></i>
