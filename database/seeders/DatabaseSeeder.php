@@ -21,6 +21,7 @@ class DatabaseSeeder extends Seeder
             'name' => "user$i",
             'email' => "user$i@gmail.com",
             'password' => $azerty,
+            'avatar' => 'default_avatar.png',
         ]);
 
         DB::table('genres')->insert([

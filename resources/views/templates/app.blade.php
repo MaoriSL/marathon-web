@@ -33,6 +33,8 @@
                 @auth
                 <a href="{{route('histoires.create')}}">Créer une histoire</a>
                 <div class="user">
+
+                    <img class="rounded-circle" src="{{ Auth::user()->avatar ? asset('storage/' . Auth::user()->avatar) : asset('default_avatar.png') }}" width="50" height="50">
                     <a href="{{route('user.profile')}}">{{Auth::user()->name}}</a>
                     <a href="{{route("logout")}}" onclick="document.getElementById('logout').submit(); return false;">Logout</a>
                     <form id="logout" action="{{route("logout")}}" method="post">
