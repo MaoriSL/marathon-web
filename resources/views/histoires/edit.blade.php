@@ -70,7 +70,7 @@
 
         <div>
             <label for="active">premier
-                <input type="checkbox" name="active">
+                <input type="checkbox" name="active" value="1">
             </label>
         </div>
         <input type="hidden" name="histoire_id" value="{{ $histoire->id }}">
@@ -78,23 +78,24 @@
     </form>
 
     <h2>Lier les chapitres</h2>
-    <form action="">
+    <form action="{{route('chapitres.link')}}" method="POST">
+        @csrf
         <div>
             <label for="origin">
-                <select name="origin">
+                <select name="chapitre_source_id">
                     <option value="All">Origin</option>
-                    @foreach($histoire->chapitres as $chapitre)
-                        <option value="{{ $chapitre->titre }}">{{ $chapitre->titre }}</option>
+                    @foreach($chapitres as $chapitre)
+                        <option value="{{ $chapitre->id }}">{{ $chapitre->titrecourt }}</option>
                     @endforeach
                 </select>
             </label>
         </div>
         <div>
             <label for="dest">
-                <select name="dest">
+                <select name="chapitre_destination_id">
                     <option value="All">Destination</option>
-                    @foreach($histoire->chapitres as $chapitre)
-                        <option value="{{ $chapitre->id }}">{{ $chapitre->titre }}</option>
+                    @foreach($chapitres as $chapitre)
+                        <option value="{{ $chapitre->id }}">{{ $chapitre->titrecourt }}</option>
                     @endforeach
                 </select>
             </label>
@@ -107,4 +108,13 @@
         </div>
         <button type="submit">lier</button>
     </form>
+    <div>
+        @foreach($chapitres as $link)
+            @foreach($link->suivants as $suivant)
+                <p>{{ $link->id }} : {{ $link->titrecourt }}</p>
+                <p>{{ $suivant->pivot->reponse }}</p>
+                <p>{{ $suivant->id }} : {{$suivant->titrecourt}}</p>
+            @endforeach
+        @endforeach
+    </div>
 @endsection

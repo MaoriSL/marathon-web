@@ -12,7 +12,7 @@
         </div>
         <div class="Histoires-infos">
             <div class="Histoire-desc">
-                <p>{{ $histoire->pitch }}</p>
+                <p>{!! $histoire->pitch_html !!}</p>
             </div>
             <p>
                 <i class="fas fa-marker"></i>
@@ -53,15 +53,15 @@
         </div>
     </div>
 </div>
-    @auth
-        @if (Auth::id() === $histoire->user_id)
-            <form action="{{ route('histoires.destroy', $histoire->id) }}" method="POST">
-                @csrf
-                @method('DELETE')
-                <button type="submit">Supprimer l'histoire</button>
-            </form>
-        @endif
-    @endauth
+@auth
+@if (Auth::id() === $histoire->user_id)
+<form action="{{ route('histoires.destroy', $histoire->id) }}" method="POST">
+    @csrf
+    @method('DELETE')
+    <button type="submit">Supprimer l'histoire</button>
+</form>
+@endif
+@endauth
 <div class="global-avis">
     <div class="avis">
         <div class="avis-titre">
@@ -69,18 +69,17 @@
         </div>
         @foreach($histoire->avis as $avis)
         <div class="avis-desc">
-            <p> <a href="{{route('user.show', $histoire->user->id)}}">{{$avis->user->name}}</a></p><br>
-            <p class="membres"> Membres Ecrivains</p>
-            <p>{{ $avis->contenu }}</p>
-            <p>Posté le {{ $avis->created_at}}</p>
+            <p> <a href="{{route('user.show', $histoire->user->id)}}">{{$avis->user->name}}</a></p>
+            <p class="membres"> Membre</p>
+            <p>Commentaire :{{ $avis->contenu }}</p>
             @auth
-                @if (Auth::id() === $avis->user_id)
-                    <form action="{{ route('avis.destroyComment', $avis->id) }}" method="POST">
-                        @csrf
-                        @method('DELETE')
-                        <button type="submit">Supprimer</button>
-                    </form>
-                @endif
+            @if (Auth::id() === $avis->user_id)
+            <form action="{{ route('avis.destroyComment', $avis->id) }}" method="POST">
+                @csrf
+                @method('DELETE')
+                <button type="submit">Supprimer</button>
+            </form>
+            @endif
             @endauth
         </div>
         @endforeach
@@ -100,5 +99,6 @@
         <b>Vous devez être connecté pour ajouter un commentaire</b>
         @endif
     </div>
+</div>
 </div>
 @endsection
