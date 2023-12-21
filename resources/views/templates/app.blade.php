@@ -24,21 +24,29 @@
 
 <body>
     <header>
-        <img src="../images/logo.png" alt="NaraVerse">
+        <div class="logo-nav">
+            <img src="../images/logo.png" alt="NaraVerse">
+            <nav class="fonctions">
+                <a href="{{route('index')}}">Accueil</a>
+                <a href=" {{route('histoires.index')}}">Catalogue</a>
+                @auth
+                <a href="{{route('histoires.create')}}">Créer une histoire</a>
+                <a href="{{route('user.profile')}}">{{Auth::user()->name}}</a>
+                <a href="{{route("logout")}}" onclick="document.getElementById('logout').submit(); return false;">Logout</a>
+                <form id="logout" action="{{route("logout")}}" method="post">
+                    @csrf
+                </form>
+                @else
+            </nav>
+        </div>
         <nav>
-            <a href="{{route('index')}}">Accueil</a>
-            <a href=" {{route('histoires.index')}}">Catalogue</a>
-            @auth
-            <a href="{{route('histoires.create')}}">Créer une histoire</a>
-            <a href="{{route('user.profile')}}">{{Auth::user()->name}}</a>
-            <a href="{{route("logout")}}" onclick="document.getElementById('logout').submit(); return false;">Logout</a>
-            <form id="logout" action="{{route("logout")}}" method="post">
-                @csrf
-            </form>
-            @else
-            <a href="{{route("login")}}">Login</a>
-            <a href="{{route("register")}}">Register</a>
-            @endauth
+            <div class="nav">
+                <div class="login">
+                    <a href="{{route("register")}}" class="register">S'inscrire</a>
+                    <a href="{{route("login")}}">Se connecter</a>
+                </div>
+                @endauth
+            </div>
         </nav>
     </header>
 

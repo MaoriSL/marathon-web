@@ -1,8 +1,78 @@
+.global-nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin: 1rem;
+    margin-left: 0;
+    width: 100%;
+}
+
+.global-nav .nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin: 1rem;
+    margin-left: 0;
+    width: 100%;
+    height: fit-content;
+    width: fit-content;
+    background-color: #5DB59B;
+    border-radius: 2rem;
+}
+
+.global-nav .nav .nav-item:nth-child(1) {
+    margin-right: 1rem;
+    background-color: white;
+    border-radius: 2rem;
+    border: black solid 3px;
+    /* margin: 1rem; */
+}
+
+.global-nav .nav .nav-item:nth-child(1) a {
+    color: #5DB59B;
+    transition: all 0.5s ease-in-out;
+    border-radius: 1rem;
+    overflow: hidden;
+    padding: 1rem;
+    width: fit-content;
+    height: fit-content;
+    text-decoration: none;
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+.global-nav .nav div {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin: 1rem;
+    margin-left: 0;
+    width: 100%;
+    height: fit-content;
+    width: fit-content;
+
+}
+
+.global-nav .nav div a {
+    color: #ffffff;
+    transition: all 0.5s ease-in-out;
+    border-radius: 1rem;
+    overflow: hidden;
+    padding: 1rem;
+    width: fit-content;
+    height: fit-content;
+    text-decoration: none;
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
 .global-grid {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 1fr;
-    /* grid-template-areas: "tuile tuile tuile"; */
     grid-gap: 1rem;
     margin: 2rem;
     /* padding: 2rem; */
@@ -18,7 +88,7 @@
     margin: 2rem;
     padding: 2rem;
     width: fit-content;
-    height: 91vh;
+    height: fit-content;
     min-width: 52vh;
     min-height: 52vh;
     background-color: #ffff;
@@ -102,7 +172,7 @@
 }
 
 .global-grid .Histoire a img {
-    width: 100%;
+    width: 69%;
     height: 50%;
     object-fit: cover;
     transition: all 0.5s ease-in-out;
