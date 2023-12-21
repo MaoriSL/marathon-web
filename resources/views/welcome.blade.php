@@ -5,6 +5,7 @@
     <div class="Intro">
         <h1>Bienvenue sur NaraVerse</h1>
         <p>Le site de référence pour les histoires dont vous êtes le héros</p>
+        <p class="lorem">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Esse, accusamus ipsum iure dolor harum ipsa consequatur obcaecati deserunt perspiciatis quia fugit dolore, nesciunt eligendi doloribus animi officia doloremque veniam necessitatibus?</p>
     </div>
     <div class="global-swiper">
         <h2>
@@ -14,9 +15,11 @@
             <div class="swiper-wrapper">
                 @foreach($histoires as $histoire)
                 <a class="swiper-slide tuile" href="{{ route('histoires.show', $histoire->id) }}">
-                    <img src="{{ asset('storage/' . $histoire->photo) }}" alt="{{ $histoire->titre }}">
-                    <p>{{ $histoire->titre }}</p>
-                    <div class="overlay"></div>
+                    <div class="infos">
+                        <img src="{{ asset('storage/' . $histoire->photo) }}" alt="{{ $histoire->titre }}">
+                        <p>{{ $histoire->titre }}</p>
+                        <div class="overlay"></div>
+                    </div>
                 </a>
                 @endforeach
             </div>
@@ -37,6 +40,7 @@
             </ul>
         </div>
     </div>
+
     <div class="genre">
         <h2>Genres</h2>
         <div class="swiper swiper2">
@@ -44,11 +48,7 @@
                 @foreach($genres as $genre)
                 <a class="swiper-slide" href="{{route('histoires.indexGenre', $genre->id)}}">
                     <p>{{ $genre->label }}</p>
-                    <div class="text-h">
-                        <p class="text-h1">{{ $genre->label }}</p>
-                        <p class="text-h2">{{ $genre->label }}</p>
-                        <p class="text-h3">{{ $genre->label }}</p>
-                    </div>
+
                 </a>
                 @endforeach
             </div>
@@ -66,7 +66,7 @@
         autoplay: {
             delay: 600,
         },
-
+        smooth: true,
         breakpoints: {
             320: {
                 slidesPerView: 1,
