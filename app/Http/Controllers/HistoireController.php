@@ -71,7 +71,9 @@ class HistoireController extends Controller
 
     public function store(Request $request)
     {
-        $this->validate($request, [
+        $this->validate(
+            $request,
+            [
                 'titre' => 'required|max:255',
                 'pitch' => 'required',
                 'active' => 'required',
@@ -123,7 +125,8 @@ class HistoireController extends Controller
         return redirect()->route('profile')->with('success', 'photo');
     }
 
-    public function storeComment(Request $request){
+    public function storeComment(Request $request)
+    {
         $request->validate([
             'contenu' => 'required',
             'histoire_id' => 'required|exists:histoires,id',
@@ -141,4 +144,3 @@ class HistoireController extends Controller
         return back()->with('success', 'Avis ajouté avec succès');
     }
 }
-

@@ -28,7 +28,7 @@
     <div class="Infos" style="display: flex;">
         <div class="Left">
             <h2>C'est quoi NaraVerse</h2>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab vel doloribus vitae animi, eos unde alias aut architecto tempora expedita quos dolores qui asperiores est, iste rerum quis similique iusto.
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab vel doloribus vitae animi, eos unde alias aut architecto tempora expedita quos dolores qui asperiores est, iste rerum quis similique iusto.</p>
         </div>
         <div class="Right">
             <h2> Fonctionnalitées des membres </h2>
@@ -37,6 +37,9 @@
                 <li>Commenter des Histoires</li>
                 <li>Reprendre la lecture</li>
                 <li>Créer sa propre aventure</li>
+                <a class="register" href="{{route('register')}}">
+                    <li>S'inscrire</li>
+                </a>
             </ul>
         </div>
     </div>
@@ -48,6 +51,8 @@
                 @foreach($genres as $genre)
                 <a class="swiper-slide" href="{{route('histoires.indexGenre', $genre->id)}}">
                     <p>{{ $genre->label }}</p>
+                    <p style="writing-mode:horizontal-tb; margin-left:-1rem;
+                    font-size:xx-large;">{{ $genre->label }}</p>
 
                 </a>
                 @endforeach

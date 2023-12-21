@@ -20,12 +20,18 @@ body header {
     border-bottom: 1px solid #e7e7e7;
     display: flex;
     justify-content: space-between;
-    padding-bottom: 1.2rem;
-    padding-top: 2rem;
+    padding: 2rem 0;
     width: 100%;
     z-index: 1;
     align-content: center;
     align-items: center;
+}
+
+body header img {
+
+    object-fit: cover;
+    border-radius: 50%;
+    margin-left: 2rem;
 }
 
 body header nav {
@@ -89,6 +95,7 @@ body header nav a.active {
     overflow: hidden;
     /* margin: 2rem auto; */
     padding: 1rem;
+    background-color: #5DB59B;
 }
 
 .swiper1 {
@@ -185,7 +192,7 @@ body header nav a.active {
 
 .genre {
     text-align: center;
-    font-size: x-large;
+    /* font-size: x-large; */
     /* height: 300px; */
     margin-top: 2rem;
     border-radius: 2rem;
@@ -255,7 +262,7 @@ body header nav a.active {
 
 }
 
-.swiper2 a p.text-h1 {
+.swiper2 a p {
     font-size: 4rem;
     font-weight: 600;
     text-transform: capitalize;
@@ -263,29 +270,7 @@ body header nav a.active {
     opacity: 1;
     transition: all 0.5s ease-in-out;
     text-orientation: mixed;
-    writing-mode: horizontal-tb;
-}
-
-.swiper2 a p.text-h2 {
-    font-size: 4rem;
-    font-weight: 600;
-    text-transform: capitalize;
-    text-align: center;
-    opacity: 1;
-    transition: all 0.5s ease-in-out;
-    text-orientation: mixed;
-    writing-mode: horizontal-tb;
-}
-
-.swiper2 a p.text-h3 {
-    font-size: 4rem;
-    font-weight: 600;
-    text-transform: capitalize;
-    text-align: center;
-    opacity: 1;
-    transition: all 0.5s ease-in-out;
-    text-orientation: mixed;
-    writing-mode: horizontal-tb;
+    writing-mode: vertical-lr;
 }
 
 .Infos {
@@ -294,12 +279,13 @@ body header nav a.active {
     align-items: center;
     flex-direction: row-reverse;
     text-align: center;
-    margin: 0 auto;
+    margin: 2rem;
+    margin-bottom: 3rem;
     width: 100%;
     height: 50vh;
     background-color: #ffffff;
     border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+
     transition: all 0.3s ease-in-out;
 }
 
@@ -319,19 +305,21 @@ body header nav a.active {
 }
 
 .Infos .Left p {
-    font-size: 1.2rem;
+    font-size: 1.5rem;
     font-weight: 400;
     margin-bottom: 1rem;
 }
 
 .Infos .Right {
-    width: fit-content;
+    width: 22%;
     height: fit-content;
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: center;
+    margin: 2rem;
     padding: 2rem;
-    border: #404242 solid 1px;
+    border: #404242 solid 2px;
     border-radius: 2rem;
     background-color: #ffffff;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.568);
@@ -356,12 +344,42 @@ body header nav a.active {
     list-style: none;
     padding: 0;
     margin: 0;
-    background-color: #818080;
     width: fit-content;
     text-align: center;
     border-radius: 2rem;
     padding: 1rem;
     margin: 0 auto;
+}
+
+.Infos .Right ul a {
+    color: #fff;
+    font-size: 1.2rem;
+    font-weight: 600;
+    text-decoration: none;
+
+    padding: 0.5rem 0;
+    /* width: 100%; */
+    background-color: #5DB59B;
+    transition: all 0.5s ease-in-out;
+}
+
+.Infos .Right ul a li {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    background-color: #5DB59B;
+    width: fit-content;
+    text-align: center;
+    border-radius: 2rem;
+    padding: 1rem;
+    margin: 0 auto;
+}
+
+
+.Infos .Right ul a:hover {
+    text-decoration: none;
+    background-color: #404242;
+    transition: all 0.5s ease-in-out;
 }
 
 .Infos .Right ul li {
