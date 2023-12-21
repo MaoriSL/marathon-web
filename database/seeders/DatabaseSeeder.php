@@ -43,7 +43,7 @@ class DatabaseSeeder extends Seeder
             'titre' => 'z1 ou la vie d\'un demi-octet',
             'pitch' => "z1 n'a pas une vie très compliquée. Quelque soit la question, la réponse se limite à 0 ou 1. 
              En même temps, cela lui permet au mois de représenter des nombres en mode binaire. C'est déjà cela !",
-            'photo'  => "/images/bit-1.webp",
+            'photo'  => "/images/storage/images/bit-1.webp",
             'user_id' => 1,
             'active'=>1,
             'genre_id'=>1
@@ -159,7 +159,7 @@ class DatabaseSeeder extends Seeder
         DB::table('histoires')->insert([
             'titre' => 'THX1138',
             'pitch' => "THX1138 est un robot mal dans sa peau et qui cherche un sens à sa vie.",
-            'photo'  => "/images/THX1138.jpg",
+            'photo'  => "/images/storage/images/THX1138.jpg",
             'user_id' => 1,
             'genre_id' => 1,
             'active' => 1
@@ -315,7 +315,7 @@ organique et robotique. En route...",
             DB::table('histoires')->insert([
                 'titre' => "l'histoire vide $i",
                 'pitch' => "Ben il n'y a rien on vous dit",
-                'photo'  => "/images/bit-1.webp",
+                'photo'  => "/images/storage/images/bit-1.webp",
                 'user_id' => rand(1, $nb_users),
                 'active'=>1,
                 'genre_id'=>rand(1,5)
@@ -352,10 +352,10 @@ organique et robotique. En route...",
 
 
         DB::table('histoires')->insert([
-            "id" => 100,
+            "id" => 21,
             'titre' => 'THX1138 -- Le retour',
             'pitch' => "THX1138 est un robot mal dans sa peau et qui cherche un sens à sa vie.",
-            'photo'  => "/images/THX1138.jpg",
+            'photo'  => "/images/storage/images/THX1138.jpg",
             'user_id' => 1,
             'genre_id' => 1,
             'active' => 0
@@ -374,7 +374,7 @@ Au seuil de l'atelier, il dut se résoudre à faire ce pour quoi il était pourt
 demander de l'aide. Issu de la dernière génération des robots dotés d'intelligence artificielle
 créée derrière les hauts murs du Consortium Robotique International Libertaire, le CRIL, une
 forteresse classée AAA dans les milieux autorisés, il avait appris à choisir.",
-            'histoire_id'  => 100,
+            'histoire_id'  => 21,
             "question" => "Sonner ? Téléphoner ? Demander conseil aux trois Fred, les oracles technologiques d'un
 monde nouveau, FredH, FredB et FredZ ?",
             "media" => "https://www.cril-limouzi.com/img/lgm-production-logo-1505993315.jpg",
@@ -391,7 +391,7 @@ associé. Il avait cédé à la plus ancienne des ruses développées par les So
 compter sur un réflexe d’humain : sonner à une porte. Le piège était grossier, il était
 tombé dedans. A force de s’humaniser, il eut à peine le temps de comprendre qu’il
 mourait d’avoir trop ressemblé aux hommes. **Fin de partie.**",
-            'histoire_id'  => 100,
+            'histoire_id'  => 21,
             "media" => "http://upload.wikimedia.org/wikipedia/commons/thumb/c/c7/Explosions.jpg/800px-Explosions.jpg",
             'premier' => 0
         ]);
@@ -404,7 +404,7 @@ pesa tant qu'il ressentit une solitude poisseuse, presque philosophique. Rien à
 entendait cette musique ultrasonique et familière de la tentative de connexion
 neuronale, celle qui avait remplacé les appels classiques. Rien, le néant, le vide
 sidéral.",
-            'histoire_id'  => 100,
+            'histoire_id'  => 21,
             "media" => "https://cdnb.artstation.com/p/assets/images/images/004/706/561/large/nicolas-martinez-matrix-telephone-1.jpg?148567536
 8",
             'premier' => 0,
@@ -420,7 +420,7 @@ d’eux seuls, ils consentirent à lui répondre dans une langue commune. Ils s�
 dépassés, il fallait consulter d’autres devins, capables d’autres formes de divinations, Blam
 Blam, Kangoo et Verre brisé, inconnus sous d’autres noms. Seuls ces trois-là sauraient. Peut-
 être. La route serait longue, sinueuse, hasardeuse.",
-            'histoire_id'  => 100,
+            'histoire_id'  => 21,
             "media" => "https://i.ytimg.com/vi/eVF4kebiks4/maxresdefault.jpg",
             'premier' => 0,
             "question" => "Que faire alors ?"
@@ -438,7 +438,7 @@ dernier moment de cette enveloppe robotique. Les Solbots avaient encore frappé.
 spaceshifter se désintégra sous l’effet cumulé des charges sourdes et subsoniques, la
 nouvelle manière de procéder. Aucun bruit, une oppressante sensation de vide et
 l’implosion.",
-            'histoire_id'  => 100,
+            'histoire_id'  => 21,
             "media" => "http://4everstatic.com/images/art/film-et-serie/battlestar-galactica,-vaisseau-spatial-172243.jpg",
             'premier' => 0,
         ]);
@@ -455,7 +455,7 @@ trois-là sauraient et lui ne savait rien. Il n’avait pas d’autre choix, il 
 intuitivement et rationnellement. LULUH serait peut-être au bout d’un nouveau
 voyage. Il y croyait, ne croyait qu’en ça, n’avait plus que ça. Elle était son tout
 organique et robotique. En route...",
-            'histoire_id'  => 100,
+            'histoire_id'  => 21,
             "media" => "https://i.ytimg.com/vi/aockugeMFyg/maxresdefault.jpg",
             'premier' => 0,
         ]);

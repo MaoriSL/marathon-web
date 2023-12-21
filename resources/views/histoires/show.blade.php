@@ -8,7 +8,7 @@
     </div>
     <div class="global-infos">
         <div class="Histoires-img">
-            <img src="{{ Storage::url($histoire->photo) }}" alt="image histoire">
+            <img src="/~but23_groupe8/storage{{ ($histoire->photo) }}" alt="image histoire">
         </div>
         <div class="Histoires-infos">
             <div class="Histoire-desc">
