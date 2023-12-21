@@ -14,7 +14,7 @@
     <!-- link font  -->
     @yield("css")
     @yield("js")
-    @vite(["resources/css/normalize.css", 'resources/css/app.css', 'resources/js/app.js', 'resources/css/Accueil.css','resources/css/Equipes.css','resources/css/login.css','resources/css/catalogue.css','resources/css/show.css'])
+    @vite(["resources/css/normalize.css", 'resources/css/app.css', 'resources/js/app.js', 'resources/css/Accueil.css','resources/css/Equipes.css','resources/css/login.css','resources/css/catalogue.css','resources/css/show.css','resources/css/create.css','resources/css/profile.css','resources/css/FilmGenre.css','resources/css/edit.css'])
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 
@@ -27,6 +27,7 @@
         <div class="logo-nav">
             <img src="/~but23_groupe8/images/Logo-nara.png" alt="Logo de l'entreprise">
             <nav class="fonctions">
+
                 <a href="{{route('index')}}">Accueil</a>
                 <a href=" {{route('histoires.index')}}">Catalogue</a>
                 @auth
@@ -60,7 +61,7 @@
 
     <footer class="foot">
         <div class="foot1">
-            <img src="../images/Logo-nara.png" alt="Nara">
+            <img src="/~but23_groupe8/images/Logo-nara.png" alt="Nara">
         </div>
         <div class="foot3">
             <ul>

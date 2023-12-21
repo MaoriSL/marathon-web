@@ -50,6 +50,13 @@
                 <a href="{{ route('chapitres.show', ['chapitre' => $histoire->premier()->id]) }}">Commencer la lecture</a>
                 @endif
             </div>
+            <div class="edit">
+                @auth
+                @if (Auth::id() === $histoire->user_id)
+                <a href="{{ route('chapitre.edit', $histoire->id) }}">Modifier l'histoire</a>
+                @endif
+                @endauth
+            </div>
         </div>
     </div>
 </div>

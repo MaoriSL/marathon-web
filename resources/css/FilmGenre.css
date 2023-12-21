@@ -1,0 +1,71 @@
+.grid-filmGenre {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-gap: 1rem;
+    margin: 0 auto;
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    border-radius: 5px;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    margin-bottom: 20px;
+}
+
+.FilmGenre {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+    width: fit-content;
+    height: 100%;
+    border-radius: 2rem;
+    /* padding: 20px; */
+    box-shadow: inset 0 10px rgba(0, 0, 0, 0.2);
+    margin-bottom: 20px;
+    transition: all 0.3s ease-in-out;
+    border: 2px solid black;
+}
+
+.FilmGenre .img {
+    width: 75%;
+    height: 100%;
+    border-radius: 2rem;
+    overflow: hidden;
+    margin-bottom: 20px;
+    transition: all 0.3s ease-in-out;
+    margin-top: 2rem;
+}
+
+.FilmGenre .img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: all 0.3s ease-in-out;
+}
+
+.FilmGenre .img:hover {
+    transform: scale(1.1);
+}
+
+.FilmGenre .img:hover img {
+    transform: scale(1.1);
+}
+
+.FilmGenre .link {
+    text-decoration: none;
+    color: black;
+    font-size: 1.5rem;
+    font-weight: 600;
+    transition: all 0.3s ease-in-out;
+}
+
+.FilmGenre .link a {
+    text-decoration: none;
+    color: black;
+    font-size: 1.5rem;
+    font-weight: 600;
+    transition: all 0.3s ease-in-out;
+}
