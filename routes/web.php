@@ -1,5 +1,10 @@
 <?php
 
+use App\Http\Controllers\AvisController;
+use App\Http\Controllers\ChapitreController;
+use App\Http\Controllers\EquipeController;
+use App\Http\Controllers\HistoireController;
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -25,4 +30,23 @@ Route::get('/test-vite', function () {
     return view('test-vite');
 })->name("test-vite");
 
-Route::get('/equipes', [\App\Http\Controllers\EquipeController::class, 'index'])->name("equipes");
+Route::get('/equipe', [EquipeController::class, 'index'])->name("equipe");
+
+//Route::get('/', [GenreController::class, 'index'])->name("index");
+Route::resource('histoires', HistoireController::class);
+Route::post('/histoires/{id}/remove', [HistoireController::class, 'removeFavoris'])->name('favoris.remove');
+Route::post('/histoires/{id}/add', [HistoireController::class, 'addFavoris'])->name('favoris.add');
+
+Route::get('/genres/{id}', [HistoireController::class, 'indexGenre'])->name("histoires.indexGenre");
+
+Route::get('/', [HistoireController::class, 'randomStories'])->name('index');
+
+Route::resource('chapitres', ChapitreController::class);
+
+Route::get('/profile', [UserController::class, 'profile'])->name('user.profile');
+
+Route::get('/user/{id}', [UserController::class, 'show'])->name('user.show');
+
+Route::post('/histoires/updateImage', [HistoireController::class, 'updateImage'])->name('histoire.updateImage');
+
+Route::post('/histoires/storeCommentaire', [HistoireController::class, 'storeComment'])->name('histoires.storeComment');

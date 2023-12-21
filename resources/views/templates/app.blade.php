@@ -1,36 +1,77 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta charset="UTF-8">
-    <title>{{isset($title) ? $title : "Page en cours"}}</title>
+    <title>{{isset($title) ? $title : "NaraVerse"}}</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- boxicons -->
+    <link rel="stylesheet" href="https://boxicons.com/css/boxicons.min.css">
+    <!-- fontawesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <!-- google fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Viaoda+Libre&display=swap" rel="stylesheet">
+    @yield("css")
+    @yield("js")
+    @vite(["resources/css/normalize.css", 'resources/css/app.css', 'resources/js/app.js', 'resources/css/Accueil.css','resources/css/Equipes.css','resources/css/login.css','resources/css/catalogue.css','resources/css/show.css'])
 
-    @vite(["resources/css/normalize.css", 'resources/css/app.css', 'resources/js/app.js'])
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
 </head>
+
 <body>
-<header>Ma super application</header>
-<nav>
-    <a href="{{route('index')}}">Accueil</a>
-    <a href="{{route('test-vite')}}">Test Vite</a>
-    <a href="#">Contact</a>
+    <header>
+        <img src="" alt="NaraVerse">
+        <nav>
+            <a href="{{route('index')}}">Accueil</a>
+            <a href=" {{route('histoires.index')}}">Catalogue</a>
+            @auth
+            <a href="{{route('histoires.create')}}">Créer une histoire</a>
+            <a href="{{route('user.profile')}}">{{Auth::user()->name}}</a>
+            <a href="{{route("logout")}}" onclick="document.getElementById('logout').submit(); return false;">Logout</a>
+            <form id="logout" action="{{route("logout")}}" method="post">
+                @csrf
+            </form>
+            @else
+            <a href="{{route("login")}}">Login</a>
+            <a href="{{route("register")}}">Register</a>
+            @endauth
+        </nav>
+    </header>
 
-@auth
-        {{Auth::user()->name}}
-        <a href="{{route("logout")}}"
-           onclick="document.getElementById('logout').submit(); return false;">Logout</a>
-        <form id="logout" action="{{route("logout")}}" method="post">
-            @csrf
-        </form>
-    @else
-        <a href="{{route("login")}}">Login</a>
-        <a href="{{route("register")}}">Register</a>
-    @endauth
-</nav>
+    <main>
+        @yield("content")
+    </main>
 
-<main>
-    @yield("content")
-</main>
-
-<footer>IUT de Lens</footer>
+    <footer class="foot">
+        <div class="foot1">
+            <h2>Navigation</h2>
+            <ul>
+                <li><a href="{{route('index')}}">Accueil</a></li>
+                <li><a href="{{route('histoires.index')}}">Catalogue</a></li>
+                <li><a href="{{route('contact')}}">Contact</a></li>
+                <li><a href="{{route('equipe')}}">Equipe</a></li>
+            </ul>
+        </div>
+        <div class="foot3">
+            <h2>Reseaux sociaux</h2>
+            <ul>
+                <li><a href="#">Facebook</a></li>
+                <li><a href="#">Twitter</a></li>
+            </ul>
+        </div>
+        <div class="foot2">
+            <h2>Liens</h2>
+            <ul>
+                <li><a href="#">Mentions légales</a></li>
+                <li><a href="#">Politique de confidentialité</a></li>
+                <li><a href="#">Conditions d'utilisation</a></li>
+            </ul>
+        </div>
+    </footer>
 </body>
+
 </html>

@@ -11,31 +11,45 @@ class Histoire extends Model
     use HasFactory;
     public $timestamps = false;
 
+    protected $fillable = [
+        'titre',
+        'pitch',
+        'photo',
+        'active',
+        'genre_id',
+        'user_id',
+    ];
 
-    public function user() {
+    public function user()
+    {
         return $this->belongsTo(User::class);
     }
 
-    public function chapitres() {
+    public function chapitres()
+    {
         return $this->hasMany(Chapitre::class);
     }
 
     /**
      * @return Model|HasMany|object|null
      */
-    public function premier() {
+    public function premier()
+    {
         return $this->chapitres()->where("premier", true)->first();
     }
 
-    public function genre() {
+    public function genre()
+    {
         return $this->belongsTo(Genre::class);
     }
 
-    public function avis() {
+    public function avis()
+    {
         return $this->hasMany(Avis::class);
     }
 
-    public function terminees() {
+    public function terminees()
+    {
         return $this->belongsToMany(User::class, "terminees", "histoire_id", "user_id")->withPivot("nombre");
     }
 }

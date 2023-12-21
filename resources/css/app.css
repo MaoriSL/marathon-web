@@ -2,6 +2,7 @@ html {
     position: relative;
     min-height: 100%;
 }
+
 body {
     /* Margin bottom by footer height */
     margin-bottom: 30px;
@@ -9,9 +10,10 @@ body {
 
 main {
     min-height: 80vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    display: block;
+    height: auto;
+    /*align-items: center;*/
+    /*justify-content: center;*/
 }
 
 footer {
