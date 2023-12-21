@@ -1,3 +1,17 @@
+.global-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+.global-container h2 {
+    font-size: 3rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    text-align: center;
+    margin-left: -44rem;
+}
+
 .global-nav {
     display: flex;
     flex-direction: row;
@@ -16,7 +30,7 @@
     margin: 1rem;
     margin-left: 0;
     width: 100%;
-    height: fit-content;
+    height: 5.7vh;
     width: fit-content;
     background-color: #5DB59B;
     border-radius: 2rem;
@@ -71,11 +85,15 @@
 
 .global-grid {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 1fr;
-    grid-gap: 1rem;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-gap: 1.2rem;
+    padding: 1rem;
     margin: 2rem;
-    /* padding: 2rem; */
+    margin-left: 0;
+    width: fit-content;
+
+
 }
 
 .global-grid .Histoire {
@@ -89,7 +107,6 @@
     padding: 2rem;
     width: fit-content;
     height: fit-content;
-    min-width: 52vh;
     min-height: 52vh;
     background-color: #ffff;
     filter: grayscale(100%);
@@ -119,8 +136,6 @@
 }
 
 
-
-
 .global-grid .Histoire .Histoire-Info {
     display: grid;
     grid-template-columns: 1fr;
@@ -143,7 +158,7 @@
 }
 
 .global-grid .Histoire .Histoire-Info .titre-note .titre h3 {
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     font-weight: 600;
     text-transform: capitalize;
     opacity: 1;
@@ -172,7 +187,7 @@
 }
 
 .global-grid .Histoire a img {
-    width: 69%;
+    width: 100%;
     height: 50%;
     object-fit: cover;
     transition: all 0.5s ease-in-out;

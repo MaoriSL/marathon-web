@@ -1,5 +1,11 @@
 body {
     background-color: #ffffff;
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
 }
 
 body .container {
@@ -7,6 +13,7 @@ body .container {
     border-radius: 5px;
     padding: 2rem;
     margin: 0 auto;
+    max-width: 1200px;
 }
 
 body header {
@@ -31,7 +38,7 @@ body header .logo-nav {
 
 body header .logo-nav a {
     color: #fff;
-    font-size: 1.2rem;
+    font-size: 1.5rem;
     font-weight: 600;
     text-decoration: none;
     display: flex;
@@ -68,7 +75,7 @@ body header nav .nav .login {
 
 body header nav .nav .login a {
     color: #5DB59B;
-    font-size: 1.2rem;
+    font-size: 1.5rem;
     font-weight: 600;
     text-decoration: none;
     display: flex;
@@ -87,7 +94,7 @@ body header nav .nav .login a {
 
 body header nav .nav .login a.register {
     color: #ffffff;
-    font-size: 1.2rem;
+    font-size: 1.5rem;
     font-weight: 600;
     text-decoration: none;
     display: flex;
@@ -103,29 +110,64 @@ body header nav .nav .login a.register {
     background-color: #5DB59B;
 }
 
+.top {
+    padding: 0 2rem;
+}
+
 
 .Intro {
-    height: 28vh;
-    /* background-color: #5DB59B; */
-    border: 2px solid #5DB59B;
+    height: fit-content;
+
+}
+
+.Intro h1 {
+    font-size: 3rem;
+    font-weight: 600;
+    padding: 1rem;
+    color: black;
 }
 
 
 
 .Intro p {
-    font-size: 1.3rem;
+    font-size: 1.7rem;
     font-weight: 600;
 
     padding: 1rem;
-    color: #5DB59B;
+    color: black;
 }
 
 .Intro p.lorem {
-    font-size: 1.3rem;
+    font-size: 1.1rem;
     font-weight: 600;
     padding: 1rem;
-    color: #5DB59B;
-    width: 50%;
+    color: black;
+    width: 92%;
+}
+
+.href {
+    display: flex;
+    text-decoration: none;
+    color: #000;
+    transition: all 0.5s ease-in-out;
+    border-radius: 2rem;
+    overflow: hidden;
+    /* margin: 2rem; */
+    width: 100%;
+}
+
+.href a {
+
+    text-decoration: none;
+    color: white;
+    font-size: 1.5rem;
+    ;
+    transition: all 0.5s ease-in-out;
+    border-radius: 2rem;
+    overflow: hidden;
+    margin-right: 1rem;
+    padding: 1rem;
+    background-color: #5DB59B;
 }
 
 .global-swiper {
@@ -140,9 +182,16 @@ body header nav .nav .login a.register {
     background-color: #5DB59B;
 }
 
+.global-swiper h2 {
+    font-size: 3rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: #ffffff;
+}
+
 .swiper1 {
     width: 100%;
-    height: 500px;
+    height: 300px;
     margin-top: 2rem;
     border-radius: 2rem;
     overflow: hidden;
@@ -151,7 +200,7 @@ body header nav .nav .login a.register {
 }
 
 .swiper-wrapper {
-    width: 130%;
+    width: 100%;
     height: 100%;
     display: flex;
     align-items: center;
@@ -176,7 +225,7 @@ body header nav .nav .login a.register {
     position: relative;
     width: 50%;
     height: 50%;
-    border-radius: 7rem;
+    border-radius: 3rem;
     overflow: hidden;
     transition: all 0.5s ease-in-out;
     margin: 2rem;
@@ -240,9 +289,16 @@ body header nav .nav .login a.register {
     border-radius: 2rem;
     overflow: hidden;
     margin: 2rem auto;
-    background-color: #5DB59B;
+    /* background-color: #5DB59B; */
     padding: 1rem;
 
+}
+
+.genre h2 {
+    font-size: 3rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: black;
 }
 
 .swiper2 {
@@ -253,7 +309,7 @@ body header nav .nav .login a.register {
     overflow: hidden;
     margin: 2rem auto;
     padding: 2rem;
-    background-color: #5DB59B;
+    /* background-color: #5DB59B; */
 }
 
 .swiper2 a {
@@ -267,24 +323,14 @@ body header nav .nav .login a.register {
     overflow: hidden;
     margin: 2rem;
     padding: 2rem;
-    width: 10vh;
-    background-color: #5DB59B;
+    width: 100vh;
+    /* background-color: #5DB59B; */
 }
 
 .swiper2 a:hover {
     text-decoration: none;
 }
 
-.swiper2 a p {
-    font-size: 4rem;
-    font-weight: 600;
-    text-transform: capitalize;
-    text-align: center;
-    opacity: 1;
-    transition: all 0.5s ease-in-out;
-    text-orientation: mixed;
-    writing-mode: vertical-lr;
-}
 
 .swiper2 a:hover p {
     opacity: 0.5;
@@ -312,7 +358,7 @@ body header nav .nav .login a.register {
     opacity: 1;
     transition: all 0.5s ease-in-out;
     text-orientation: mixed;
-    writing-mode: vertical-lr;
+    writing-mode: horizontal-tb;
 }
 
 .Infos {
@@ -321,10 +367,11 @@ body header nav .nav .login a.register {
     align-items: center;
     flex-direction: row-reverse;
     text-align: center;
-    margin: 2rem;
-    margin-bottom: 3rem;
-    width: 100%;
-    height: 50vh;
+    /* margin: 2rem;
+    margin-bottom: 3rem; */
+    padding: 2rem;
+    /* width: 100%; */
+    height: fit-content;
     background-color: #ffffff;
     border-radius: 5px;
 
@@ -347,13 +394,14 @@ body header nav .nav .login a.register {
 }
 
 .Infos .Left p {
-    font-size: 1.5rem;
+    font-size: 1rem;
     font-weight: 400;
     margin-bottom: 1rem;
+    text-align: right;
 }
 
 .Infos .Right {
-    width: 22%;
+    width: fit-content;
     height: fit-content;
     display: flex;
     flex-direction: column;
@@ -435,15 +483,16 @@ body header nav .nav .login a.register {
 }
 
 .foot {
-    background-color: #ffffff;
+    background-color: #5DB59B;
     border-top: 2px solid #e7e7e7;
     display: flex;
     justify-content: space-evenly;
     width: 100%;
     z-index: 1;
-    border-radius: 2rem;
+    /* border-radius: 2rem; */
     text-align: center;
     margin-bottom: -1rem;
+    padding: 2rem;
 }
 
 .foot ul {
@@ -458,13 +507,13 @@ body header nav .nav .login a.register {
 }
 
 .foot li a {
-    color: #000;
+    color: #fff;
     font-size: 1.2rem;
     font-weight: 600;
     text-decoration: none;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: end;
     padding: 0.5rem 0;
     /* width: 100%; */
     margin: 0 0.5rem
