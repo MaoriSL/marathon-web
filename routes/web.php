@@ -50,3 +50,12 @@ Route::get('/user/{id}', [UserController::class, 'show'])->name('user.show');
 Route::post('/histoires/updateImage', [HistoireController::class, 'updateImage'])->name('histoire.updateImage');
 
 Route::post('/histoires/storeCommentaire', [HistoireController::class, 'storeComment'])->name('histoires.storeComment');
+
+Route::post('/histoires/storeChapitre', [ChapitreController::class, 'store'])->name('chapitre.store');
+
+Route::get('/histoires/{id}/editHistoire', [HistoireController::class, 'editChapitre'])->name('chapitre.edit');
+
+Route::post('/histoires/{histoire}/public', [HistoireController::class, 'makePublic'])->name('histoires.makePublic');
+Route::post('/histoires/{histoire}/private', [HistoireController::class, 'makePrivate'])->name('histoires.makePrivate');
+
+Route::delete('/avis/{avis}', [AvisController::class, 'destroyComment'])->name('avis.destroyComment');
