@@ -7,7 +7,7 @@
         <img src="{{ $chapitre->media }}">
         <p>{{ $chapitre->question }}</p>
         @foreach($chapitre->suivants as $suivant)
-
+            <a href="{{ route('chapitres.show', $suivant->id) }}">{{ $suivant->titrecourt }}</a>
         @endforeach
     </div>
 @endsection
