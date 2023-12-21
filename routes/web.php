@@ -59,3 +59,7 @@ Route::post('/histoires/{histoire}/public', [HistoireController::class, 'makePub
 Route::post('/histoires/{histoire}/private', [HistoireController::class, 'makePrivate'])->name('histoires.makePrivate');
 
 Route::delete('/avis/{avis}', [AvisController::class, 'destroyComment'])->name('avis.destroyComment');
+
+Route::post('/profile/avatar', [App\Http\Controllers\UserController::class, 'updateAvatar'])->name('profile.updateAvatar');
+
+Route::post('/profile/avatar/delete', [App\Http\Controllers\UserController::class, 'deleteAvatar'])->name('profile.deleteAvatar');
