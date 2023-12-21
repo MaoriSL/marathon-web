@@ -1,0 +1,217 @@
+.global-chap>div {
+    background-color: #5DB59B;
+    width: fit-content;
+    padding: 3rem;
+    border-radius: 5px;
+    margin: 0 auto;
+    margin-bottom: 1rem;
+    margin-top: 2rem;
+
+}
+
+.Histoire {
+    margin: 0 auto;
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    border-radius: 5px;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    margin-bottom: 20px;
+}
+
+.Histoire h2 {
+    font-size: 3rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.Histoire form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.Chapitre {
+    margin: 0 auto;
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    border-radius: 5px;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    margin-bottom: 20px;
+}
+
+.Chapitre h2 {
+    font-size: 3rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.Chapitre .All-Chap {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    ;
+}
+
+.Chapitre .All-Chap .Chap {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.Chapitre .All-Chap .Chap h3 {
+    font-size: 2rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+.AddChap-form {
+    margin: 0 auto;
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    border-radius: 5px;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    margin-bottom: 20px;
+}
+
+.AddChap-form h2 {
+    font-size: 3rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+form.AddChap {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+form.AddChap input {
+    width: 100%;
+    max-width: 15rem;
+    height: 50px;
+    border-radius: 5px;
+    border: #404242 solid 2px;
+    margin-bottom: 20px;
+    padding: 10px;
+
+}
+
+form.AddChap textarea {
+    width: 100%;
+    height: 200px;
+    border-radius: 5px;
+    border: #404242 solid 2px;
+    margin-bottom: 20px;
+    padding: 10px;
+}
+
+form.AddChap input[type="checkbox"] {
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+    cursor: pointer;
+    ;
+}
+
+form.AddChap button {
+    width: 100%;
+    max-width: 15rem;
+    height: 50px;
+    border-radius: 5px;
+    border: #404242 solid 2px;
+    margin-bottom: 20px;
+    padding: 10px;
+    background-color: #5DB59B;
+    color: #fff;
+    font-size: 1.2rem;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+form.AddChap .remember {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.lier-Chap {
+    margin: 0 auto;
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    border-radius: 5px;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    margin-bottom: 20px;
+}
+
+.lier-Chap h2 {
+    font-size: 3rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+form.lier {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+form.lier>div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 10rem;
+}
+
+form.lier input {
+    width: 100%;
+    max-width: 15rem;
+    height: 50px;
+    border-radius: 5px;
+    border: #404242 solid 2px;
+    margin-bottom: 20px;
+    /* padding: 10px; */
+
+}
+
+form.lier button {
+    width: 100%;
+    max-width: 15rem;
+    height: 50px;
+    border-radius: 5px;
+    border: #404242 solid 2px;
+    margin-bottom: 20px;
+    padding: 10px;
+    background-color: #5DB59B;
+    color: #fff;
+    font-size: 1.2rem;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+form.lier select {
+    width: 100%;
+    max-width: 15rem;
+    height: 50px;
+    border-radius: 5px;
+    border: #404242 solid 2px;
+    margin-bottom: 20px;
+    padding: 10px;
+}
