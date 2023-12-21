@@ -47,9 +47,6 @@ Route::get('/profile', [UserController::class, 'profile'])->name('user.profile')
 
 Route::get('/user/{id}', [UserController::class, 'show'])->name('user.show');
 
-Route::post('/histoires/{id}', [AvisController::class, 'store'])->name('avis.store');
-
-
 Route::post('/histoires/updateImage', [HistoireController::class, 'updateImage'])->name('histoire.updateImage');
 
 Route::post('/histoires/storeCommentaire', [HistoireController::class, 'storeComment'])->name('histoires.storeComment');
