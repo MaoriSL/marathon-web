@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\Cookie;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
+use Parsedown;
 use PhpParser\Node\Expr\New_;
 use App\Models\User;
 
@@ -36,6 +37,10 @@ class HistoireController extends Controller
 
     public function show(Histoire $histoire)
     {
+
+        $parsedown = new Parsedown();
+        $histoire->pitch_html = $parsedown->text($histoire->pitch);
+
         $histoireDetails = $histoire->load('chapitres', 'avis', 'terminees', 'user', 'genre');
 
         if (Auth::check()) {
@@ -71,9 +76,7 @@ class HistoireController extends Controller
 
     public function store(Request $request)
     {
-        $this->validate(
-            $request,
-            [
+        $this->validate($request, [
                 'titre' => 'required|max:255',
                 'pitch' => 'required',
                 'active' => 'required',
@@ -95,12 +98,15 @@ class HistoireController extends Controller
                 Storage::disk('public')->delete($newhistoire->photo);
             }
             $photo = $request->file('photo');
-            $path = $photo->store('storage', 'public');
+            $path = $photo->store('images', 'public');
             $newhistoire->photo = $path;
         }
+        $parsedown = new Parsedown();
+        $newhistoire->pitch = $parsedown->text($request->input('pitch'));
+
         $newhistoire->save();
 
-        return redirect()->route('histoires.show', ['histoire' => $newhistoire->id]);
+        return redirect()->route('chapitre.edit', ['id' => $newhistoire->id]);
     }
 
     public function updateImage(Request $request)
@@ -125,8 +131,7 @@ class HistoireController extends Controller
         return redirect()->route('profile')->with('success', 'photo');
     }
 
-    public function storeComment(Request $request)
-    {
+    public function storeComment(Request $request){
         $request->validate([
             'contenu' => 'required',
             'histoire_id' => 'required|exists:histoires,id',
@@ -146,7 +151,8 @@ class HistoireController extends Controller
 
     public function editChapitre($id){
         $histoire = Histoire::find($id);
-        return view('histoires.edit', ['histoire' => $histoire]);
+        $chapitres = $histoire->chapitres;
+        return view('histoires.edit', ['histoire' => $histoire, 'chapitres' => $chapitres]);
     }
 
     public function destroy(Histoire $histoire)

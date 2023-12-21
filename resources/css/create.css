@@ -1,0 +1,144 @@
+.form-create {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 1rem;
+    margin-left: 0;
+    width: 100%;
+    height: 100vh;
+}
+
+.form-create form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 1rem;
+    margin-left: 0;
+    padding: 7rem;
+    height: fit-content;
+    width: fit-content;
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.568);
+    border-radius: 2rem;
+}
+
+.form-create form h3 {
+    font-size: 3rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    text-align: center;
+    color: #5DB59B;
+    font-family: Lexend Deca;
+}
+
+.form-create form input {
+    width: 35rem;
+    height: 50px;
+    margin: 0.5rem 1rem;
+    padding: 0 1rem;
+    border: 2px solid #000;
+    border-radius: 1rem;
+    outline: none;
+    font-size: 1rem;
+    transition: all 0.3s ease-in-out;
+}
+
+.form-create form input[type="text"]:valid {
+    border-color: #5DB59B;
+    border: 2px solid #5DB59B;
+}
+
+
+.form-create form textarea {
+    width: 35rem;
+    height: 150px;
+    margin: 0.5rem 1rem;
+    padding: 0 1rem;
+    border: 2px solid #000;
+    border-radius: 1rem;
+    outline: none;
+    font-size: 1rem;
+    transition: all 0.3s ease-in-out;
+}
+
+.form-create form textarea::placeholder {
+    color: #2ecc71;
+    font-size: 1.5rem;
+    font-weight: 500;
+    text-transform: capitalize;
+    opacity: 1;
+    transition: all 0.5s ease-in-out;
+    color: black;
+    margin: auto;
+    padding: 2rem;
+    /* text-align: center; */
+}
+
+.form-create form textarea:invalid {
+    border-color: #e74c3c;
+    border: 2px solid #e74c3c;
+}
+
+.form-create form select {
+    width: 35rem;
+    height: 50px;
+    margin: 0.5rem 1rem;
+    padding: 0 1rem;
+    border: 2px solid #000;
+    border-radius: 1rem;
+    outline: none;
+    font-size: 1rem;
+    transition: all 0.3s ease-in-out;
+}
+
+.form-create form select option {
+    width: 35rem;
+    height: 50px;
+    margin: 0.5rem 1rem;
+    padding: 0 1rem;
+    border: 2px solid #000;
+    border-radius: 1rem;
+    outline: none;
+    font-size: 1rem;
+    transition: all 0.3s ease-in-out;
+}
+
+.form-create form select option:valid {
+    border-color: #5DB59B;
+    border: 2px solid #5DB59B;
+}
+
+.form-create form .submit {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    height: fit-content;
+    width: fit-content;
+}
+
+.form-create form button[type="submit"] {
+    width: 15rem;
+    height: 50px;
+    margin: 0.5rem 1rem;
+    padding: 0 1rem;
+    border: 2px solid #000;
+    border-radius: 2rem;
+    outline: none;
+    font-size: 1rem;
+    transition: all 0.3s ease-in-out;
+}
+
+.form-create form input[type="file"] {
+    width: 35rem;
+    height: 50px;
+    margin: 0.5rem 1rem;
+    padding: 0 1rem;
+    border: 2px solid #000;
+    border-radius: 1rem;
+    outline: none;
+    font-size: 1rem;
+    transition: all 0.3s ease-in-out;
+
+}
