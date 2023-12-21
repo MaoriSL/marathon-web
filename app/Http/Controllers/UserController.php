@@ -13,8 +13,9 @@ class UserController
     {
         $user = Auth::user();
         $favorites = $user->favorites()->get();
+        $histoires = $user->mesHistoires()->get();
 
-        return view('user.profile', ['favorites' => $favorites]);
+        return view('user.profile', ['favorites' => $favorites, 'user' => $user, 'histoires' => $histoires]);
     }
     public function show($id)
     {
@@ -23,4 +24,5 @@ class UserController
 
         return view('user.show', ['user' => $user, 'histoires' => $histoires]);
     }
+
 }
