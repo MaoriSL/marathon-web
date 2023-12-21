@@ -3,7 +3,7 @@
 @section('content')
 <div class="User-Info">
     <div class="User-Info-Photo">
-        <img src="{{ asset('images/default.png') }}" alt="">
+        <img src="{{ asset('images/default_avatar.png') }}" alt="">
     </div>
     <div class="User-Info-Text">
         <h1>{{ $user->name }}</h1>
