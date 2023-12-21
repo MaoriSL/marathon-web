@@ -16,6 +16,7 @@ export default defineConfig({
         "resources/css/catalogue.css",
         "resources/css/show.css",
         "resources/css/404.css",
+        "resources/css/create.css",
       ],
       refresh: true,
     }),
