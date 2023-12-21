@@ -95,7 +95,7 @@ class HistoireController extends Controller
                 Storage::disk('public')->delete($newhistoire->photo);
             }
             $photo = $request->file('photo');
-            $path = $photo->store('storage/images', 'public');
+            $path = $photo->store('storage', 'public');
             $newhistoire->photo = $path;
         }
         $newhistoire->save();
