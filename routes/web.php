@@ -50,3 +50,6 @@ Route::get('/user/{id}', [UserController::class, 'show'])->name('user.show');
 Route::post('/histoires/updateImage', [HistoireController::class, 'updateImage'])->name('histoire.updateImage');
 
 Route::post('/histoires/storeCommentaire', [HistoireController::class, 'storeComment'])->name('histoires.storeComment');
+
+Route::delete('/avis/{avis}', [AvisController::class, 'destroyComment'])->name('avis.destroyComment');
+

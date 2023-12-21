@@ -32,12 +32,31 @@
         @endif
     </div>
 
+    @auth
+        @if (Auth::id() === $histoire->user_id)
+            <form action="{{ route('histoires.destroy', $histoire->id) }}" method="POST">
+                @csrf
+                @method('DELETE')
+                <button type="submit">Supprimer l'histoire</button>
+            </form>
+        @endif
+    @endauth
+
     <h3>Commentaires</h3>
     @foreach($histoire->avis as $avis)
         <div>
             <p>{{ $avis->contenu }}</p>
             <p>Posté le {{ $avis->created_at}}</p>
             <p>Posté par : <a href="{{route('user.show', $histoire->user->id)}}">{{$avis->user->name}}</a></p><br>
+            @auth
+                @if (Auth::id() === $avis->user_id)
+                    <form action="{{ route('avis.destroyComment', $avis->id) }}" method="POST">
+                        @csrf
+                        @method('DELETE')
+                        <button type="submit">Supprimer</button>
+                    </form>
+                @endif
+            @endauth
         </div>
     @endforeach
 

@@ -143,4 +143,16 @@ class HistoireController extends Controller
 
         return back()->with('success', 'Avis ajouté avec succès');
     }
+
+    public function destroy(Histoire $histoire)
+    {
+        if (Auth::id() !== $histoire->user_id) {
+            return redirect()->back()->with('error', "Vous n'êtes pas autorisé à supprimer cette histoire.");
+        }
+
+        $histoire->delete();
+
+        return redirect()->route('histoires.index')->with('success', 'Histoire supprimée avec succès');
+    }
+
 }
