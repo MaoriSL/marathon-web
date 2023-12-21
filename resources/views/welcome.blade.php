@@ -10,7 +10,9 @@
         </div>
         <div class="href">
             <a href="{{route('histoires.index')}}">Découvrir le catalogue</a>
+            @auth
             <a href="#">Voir mes lectures</a>
+            @endauth
         </div>
     </div>
     <div class="global-swiper">
@@ -104,7 +106,7 @@
         direction: 'horizontal',
         loop: true,
         slidesPerView: 3,
-        spaceBetween: 500,
+        spaceBetween: 50,
         speed: 2000,
         autoplay: {
             delay: 600,

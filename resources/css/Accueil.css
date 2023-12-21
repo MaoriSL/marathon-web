@@ -110,6 +110,12 @@ body header nav .nav .login a.register {
     background-color: #5DB59B;
 }
 
+.user {
+    display: flex;
+    margin-left: 71rem;
+}
+
+
 .top {
     padding: 0 2rem;
 }
@@ -323,7 +329,7 @@ body header nav .nav .login a.register {
     overflow: hidden;
     margin: 2rem;
     padding: 2rem;
-    width: 100vh;
+    width: 400px;
     /* background-color: #5DB59B; */
 }
 
@@ -342,13 +348,7 @@ body header nav .nav .login a.register {
     transition: background-color 1s ease-in-out;
 }
 
-.swiper2 a .text-h {
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-gap: 0.2rem;
-    padding: 1rem;
 
-}
 
 .swiper2 a p {
     font-size: 4rem;
@@ -357,8 +357,8 @@ body header nav .nav .login a.register {
     text-align: center;
     opacity: 1;
     transition: all 0.5s ease-in-out;
-    text-orientation: mixed;
-    writing-mode: horizontal-tb;
+    /* text-orientation: mixed;*/
+    /* writing-mode: horizontal-tb;*/
 }
 
 .Infos {

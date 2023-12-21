@@ -14,7 +14,7 @@
     <!-- link font  -->
     @yield("css")
     @yield("js")
-    @vite(["resources/css/normalize.css", 'resources/css/app.css', 'resources/js/app.js', 'resources/css/Accueil.css','resources/css/Equipes.css','resources/css/login.css','resources/css/catalogue.css','resources/css/show.css'])
+    @vite(["resources/css/normalize.css", 'resources/css/app.css', 'resources/js/app.js', 'resources/css/Accueil.css','resources/css/Equipes.css','resources/css/login.css','resources/css/catalogue.css','resources/css/show.css','resources/css/create.css','resources/css/profile.css'])
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 
@@ -25,17 +25,20 @@
 <body>
     <header>
         <div class="logo-nav">
-            <img src="../images/logo.png" alt="NaraVerse">
+            <img src="/images/logo.png" alt="NaraVerse">
             <nav class="fonctions">
+
                 <a href="{{route('index')}}">Accueil</a>
                 <a href=" {{route('histoires.index')}}">Catalogue</a>
                 @auth
                 <a href="{{route('histoires.create')}}">Créer une histoire</a>
-                <a href="{{route('user.profile')}}">{{Auth::user()->name}}</a>
-                <a href="{{route("logout")}}" onclick="document.getElementById('logout').submit(); return false;">Logout</a>
-                <form id="logout" action="{{route("logout")}}" method="post">
-                    @csrf
-                </form>
+                <div class="user">
+                    <a href="{{route('user.profile')}}">{{Auth::user()->name}}</a>
+                    <a href="{{route("logout")}}" onclick="document.getElementById('logout').submit(); return false;">Logout</a>
+                    <form id="logout" action="{{route("logout")}}" method="post">
+                        @csrf
+                    </form>
+                </div>
                 @else
             </nav>
         </div>
