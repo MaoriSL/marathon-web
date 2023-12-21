@@ -10,6 +10,22 @@
             </ul>
         </div>
     @endif
+
+    {{-- Valide --}}
+    <h2>Histoire</h2>
+    <div>
+        @if($histoire->active)
+            <form method="POST" action="{{ route('histoires.makePrivate', $histoire->id) }}">
+                @csrf
+                <button type="submit">Rendre privée</button>
+            </form>
+        @else
+            <form method="POST" action="{{ route('histoires.makePublic', $histoire->id) }}">
+                @csrf
+                <button type="submit">Rendre publique</button>
+            </form>
+        @endif
+    </div>
     <h2>Chapitres</h2>
     @foreach($histoire->chapitres as $chapitre)
         <div>

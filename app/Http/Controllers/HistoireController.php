@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\Cookie;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
+use Parsedown;
 use PhpParser\Node\Expr\New_;
 use App\Models\User;
 
@@ -23,7 +24,7 @@ class HistoireController extends Controller
 
     public function index()
     {
-        $histoires = Histoire::all();
+        $histoires = Histoire::where('active', 1)->get();
         return view('histoires.index', ['histoires' => $histoires]);
     }
 
@@ -36,6 +37,10 @@ class HistoireController extends Controller
 
     public function show(Histoire $histoire)
     {
+
+        $parsedown = new Parsedown();
+        $histoire->pitch_html = $parsedown->text($histoire->pitch);
+
         $histoireDetails = $histoire->load('chapitres', 'avis', 'terminees', 'user', 'genre');
 
         if (Auth::check()) {
@@ -96,6 +101,9 @@ class HistoireController extends Controller
             $path = $photo->store('images', 'public');
             $newhistoire->photo = $path;
         }
+        $parsedown = new Parsedown();
+        $newhistoire->pitch_html = $parsedown->text($request->input('pitch'));
+
         $newhistoire->save();
 
         return redirect()->route('histoires.show', ['histoire' => $newhistoire->id]);
@@ -145,5 +153,32 @@ class HistoireController extends Controller
         $histoire = Histoire::find($id);
         return view('histoires.edit', ['histoire' => $histoire]);
     }
-}
 
+    public function destroy(Histoire $histoire)
+    {
+        if (Auth::id() !== $histoire->user_id) {
+            return redirect()->back()->with('error', "Vous n'êtes pas autorisé à supprimer cette histoire.");
+        }
+
+        $histoire->delete();
+
+        return redirect()->route('histoires.index')->with('success', 'Histoire supprimée avec succès');
+    }
+
+    public function makePublic(Histoire $histoire)
+    {
+        $histoire->active = 1;
+        $histoire->save();
+
+        return redirect()->back()->with('success', 'Histoire rendue publique');
+    }
+
+    public function makePrivate(Histoire $histoire)
+    {
+        $histoire->active = 0;
+        $histoire->save();
+
+        return redirect()->back()->with('success', 'Histoire rendue privée');
+    }
+
+}

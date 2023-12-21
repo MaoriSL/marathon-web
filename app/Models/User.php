@@ -21,7 +21,7 @@ class User extends Authenticatable {
     }
 
     public function terminees() {
-        return $this->belongsToMany(Histoire::class, "terminee", "user_id",
+        return $this->belongsToMany(Histoire::class, "terminees", "user_id",
             "histoire_id")->withPivot("nombre");
     }
 
@@ -43,6 +43,7 @@ class User extends Authenticatable {
         'name',
         'email',
         'password',
+        'avatar',
     ];
 
     /**

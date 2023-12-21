@@ -1,0 +1,261 @@
+.Titre-auteur {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    margin-left: 2rem;
+}
+
+.Titre-auteur h1 {
+    font-size: 2rem;
+    font-weight: 600;
+    text-transform: capitalize;
+    opacity: 1;
+    transition: all 0.5s ease-in-out;
+    color: black;
+    /* margin: auto; */
+    padding: 2rem;
+}
+
+.Titre-auteur p {
+    font-size: 1.5rem;
+    font-weight: 400;
+    text-transform: capitalize;
+    opacity: 1;
+    transition: all 0.5s ease-in-out;
+    color: black;
+    /* margin: auto; */
+    padding: 2rem;
+}
+
+.Titre-auteur p a {
+    font-size: 1.5rem;
+    font-weight: 400;
+    text-transform: capitalize;
+    opacity: 1;
+    transition: all 0.5s ease-in-out;
+    color: black;
+    /* margin: auto; */
+    /* padding: 2rem; */
+    text-decoration: none;
+}
+
+.global-infos {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 1.2rem;
+    padding: 1rem;
+    margin: 2rem;
+
+}
+
+.global-infos .Histoires-img {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.global-infos .Histoires-infos {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+form.favoris {
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    align-items: center;
+    margin: 1rem;
+    margin-left: 0;
+    width: 100%;
+    height: fit-content;
+    width: fit-content;
+}
+
+.Lire {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 1rem;
+    margin-left: 0;
+    width: 100%;
+    height: fit-content;
+    width: fit-content;
+}
+
+.Lire a {
+    color: #ffffff;
+    transition: all 0.5s ease-in-out;
+    border-radius: 1rem;
+    overflow: hidden;
+    padding: 1rem;
+    width: fit-content;
+    height: fit-content;
+    background-color: #5DB59B;
+    text-decoration: none;
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+.avis {
+    display: flex;
+    flex-direction: column;
+    margin: 1rem;
+    margin-left: 0;
+    width: 100%;
+    height: fit-content;
+    width: fit-content;
+}
+
+.avis .avis-titre {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 3rem;
+    margin-left: 0;
+    width: 100%;
+    height: fit-content;
+    width: fit-content;
+    border-radius: 1rem;
+    padding: 1rem;
+    color: black;
+}
+
+.avis .avis-titre h3 {
+    font-size: 2rem;
+    font-weight: 600;
+    text-transform: capitalize;
+    opacity: 1;
+    transition: all 0.5s ease-in-out;
+    color: black;
+    /* margin: auto; */
+    padding: 2rem;
+}
+
+.avis .avis-desc {
+    margin: 1rem;
+    margin-left: 2rem;
+    width: 100%;
+    height: fit-content;
+    width: fit-content;
+    background-color: #5DB59B;
+    border-radius: 1rem;
+    padding: 1rem;
+}
+
+.avis .avis-desc p.membres {
+    font-size: 1.5rem;
+    font-weight: 500;
+    text-transform: capitalize;
+    opacity: 1;
+    transition: all 0.5s ease-in-out;
+    color: #ffffff;
+    margin: auto;
+    padding: 2rem;
+    padding-top: 0;
+    padding-left: 0;
+    text-decoration: none;
+}
+
+.avis .avis-desc p {
+    font-size: 1.5rem;
+    font-weight: 400;
+    text-transform: capitalize;
+    opacity: 1;
+    transition: all 0.5s ease-in-out;
+    color: black;
+    margin: auto;
+    padding: rem;
+}
+
+.avis .avis-desc p a {
+    font-size: 2.5rem;
+    font-weight: 500;
+    letter-spacing: 0.1rem;
+    text-transform: capitalize;
+    opacity: 1;
+    transition: all 0.5s ease-in-out;
+    color: #ffffff;
+    /* margin: auto; */
+    /* padding: 2rem; */
+    text-decoration: none;
+}
+
+.Add-avis {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 1rem;
+    margin: 0 auto;
+    width: 100%;
+    height: fit-content;
+    width: fit-content;
+}
+
+.form-avis {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin: 1rem;
+    margin-left: 0;
+    height: fit-content;
+    width: fit-content;
+}
+
+.form-avis textarea {
+    width: 50rem;
+    height: 50px;
+    margin: 0.5rem 1rem;
+    padding: 0 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    outline: none;
+    font-size: 1rem;
+    transition: all 0.3s ease-in-out;
+    box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.712);
+}
+
+.form-avis textarea::placeholder {
+    color: #2ecc71;
+    font-size: 1.5rem;
+    font-weight: 500;
+    text-transform: capitalize;
+    opacity: 1;
+    transition: all 0.5s ease-in-out;
+    color: black;
+    margin: auto;
+    padding: 2rem;
+    /* text-align: center; */
+
+}
+
+
+.form-avis textarea:invalid {
+    border-color: #e74c3c;
+    border: 2px solid #e74c3c;
+}
+
+.form-avis textarea:valid {
+    border-color: #2ecc71;
+    border: 2px solid #2ecc71;
+}
+
+.form-avis button[type="submit"] {
+    width: 100%;
+    height: 50px;
+    margin: 0.5rem 0;
+    padding: 0 1rem;
+    border: none;
+    border-radius: 5px;
+    outline: none;
+    font-size: 1rem;
+    color: #ffffff;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    background-color: #5DB59B;
+}

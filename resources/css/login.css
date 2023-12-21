@@ -1,0 +1,130 @@
+.main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 1rem;
+    margin-left: 0;
+    width: 100%;
+    height: fit-content;
+}
+
+main form.login {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 1rem;
+    margin-left: 0;
+    padding: 7rem;
+    height: fit-content;
+    width: fit-content;
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.568);
+    border-radius: 2rem;
+}
+
+main form.login h2 {
+    font-size: 3rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    text-align: center;
+    color: #5DB59B;
+    font-family: Lexend Deca;
+}
+
+main form.login input {
+    width: 35rem;
+    height: 50px;
+    margin: 0.5rem 1rem;
+    padding: 0 1rem;
+    border: 2px solid #000;
+    border-radius: 2rem;
+    outline: none;
+    font-size: 1rem;
+    transition: all 0.3s ease-in-out;
+}
+
+main form.login input[type="email"]:valid {
+    border-color: #5DB59B;
+    border: 2px solid #5DB59B;
+}
+
+main form.login input[type="email"]:invalid {
+    border-color: #e74c3c;
+    border: 2px solid #e74c3c;
+}
+
+main form.login input[type="password"]:valid {
+    border-color: #5DB59B;
+    border: 2px solid #5DB59B;
+}
+
+main form.login input[type="password"]:invalid {
+    border-color: #e74c3c;
+    border: 2px solid #e74c3c;
+}
+
+main form.login input[type="text"]:valid {
+    border-color: #5DB59B;
+    border: 2px solid #5DB59B;
+}
+
+main form.login input[type="text"]:invalid {
+    border-color: #e74c3c;
+    border: 2px solid #e74c3c;
+}
+
+main form.login .submit {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    height: fit-content;
+    width: fit-content;
+}
+
+main form.login input[type="submit"] {
+    width: 15rem;
+    height: 50px;
+    margin: 0.5rem 1rem;
+    padding: 0 1rem;
+    border: 2px solid #000;
+    border-radius: 2rem;
+    outline: none;
+    font-size: 1rem;
+    transition: all 0.3s ease-in-out;
+}
+
+main form.login input[type="checkbox"] {
+    width: 1rem;
+    height: 1rem;
+    margin: 0.5rem 1rem;
+    padding: 0 1rem;
+    border: 2px solid #000;
+    border-radius: 2rem;
+    outline: none;
+    font-size: 1rem;
+    transition: all 0.3s ease-in-out;
+}
+
+main form.login input[type="checkbox"]:checked {
+    background-color: #5DB59B;
+}
+
+main form.login .remember {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: center;
+    align-items: center;
+    margin-left: 0;
+    height: fit-content;
+
+}
+
+main form.login .mdp {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-left: 0;
+}

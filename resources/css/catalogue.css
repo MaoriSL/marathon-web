@@ -1,0 +1,198 @@
+.global-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+.global-container h2 {
+    font-size: 3rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    text-align: center;
+    margin-left: -44rem;
+}
+
+.global-nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin: 1rem;
+    margin-left: 0;
+    width: 100%;
+}
+
+.global-nav .nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin: 1rem;
+    margin-left: 0;
+    width: 100%;
+    height: 5.7vh;
+    width: fit-content;
+    background-color: #5DB59B;
+    border-radius: 2rem;
+}
+
+.global-nav .nav .nav-item:nth-child(1) {
+    margin-right: 1rem;
+    background-color: white;
+    border-radius: 2rem;
+    border: black solid 3px;
+    /* margin: 1rem; */
+}
+
+.global-nav .nav .nav-item:nth-child(1) a {
+    color: #5DB59B;
+    transition: all 0.5s ease-in-out;
+    border-radius: 1rem;
+    overflow: hidden;
+    padding: 1rem;
+    width: fit-content;
+    height: fit-content;
+    text-decoration: none;
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+.global-nav .nav div {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin: 1rem;
+    margin-left: 0;
+    width: 100%;
+    height: fit-content;
+    width: fit-content;
+
+}
+
+.global-nav .nav div a {
+    color: #ffffff;
+    transition: all 0.5s ease-in-out;
+    border-radius: 1rem;
+    overflow: hidden;
+    padding: 1rem;
+    width: fit-content;
+    height: fit-content;
+    text-decoration: none;
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+.global-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-gap: 1.2rem;
+    padding: 1rem;
+    margin: 2rem;
+    margin-left: 0;
+    width: fit-content;
+
+
+}
+
+.global-grid .Histoire {
+
+    text-decoration: none;
+    color: #000;
+    transition: all 0.5s ease-in-out;
+    border-radius: 2rem;
+    overflow: hidden;
+    margin: 2rem;
+    padding: 2rem;
+    width: fit-content;
+    height: fit-content;
+    min-height: 52vh;
+    background-color: #ffff;
+    filter: grayscale(100%);
+    opacity: 0.5;
+    resize: both;
+    border: #000 solid 3px;
+
+}
+
+
+.global-grid .Histoire:hover {
+    transform: scale(1.1);
+    text-decoration: none;
+    color: #000;
+    transition: all 0.5s ease-in-out;
+    border-radius: 2rem;
+    overflow: hidden;
+    margin: 2rem;
+    padding: 2rem;
+    width: 10vh;
+    width: fit-content;
+    opacity: 1;
+    background-color: #ffff;
+    filter: grayscale(0%);
+    resize: both;
+
+}
+
+
+.global-grid .Histoire .Histoire-Info {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 0.2rem;
+    padding: 1rem;
+}
+
+.global-grid .Histoire .Histoire-Info .desc p {
+    opacity: 0;
+    transition: all 0.5s ease-in-out;
+}
+
+.global-grid .Histoire:hover .Histoire-Info .desc p {
+    opacity: 1;
+    transition: all 0.5s ease-in-out;
+}
+
+.global-grid .Histoire .Histoire-Info .titre-note {
+    height: 6vh;
+}
+
+.global-grid .Histoire .Histoire-Info .titre-note .titre h3 {
+    font-size: 1.3rem;
+    font-weight: 600;
+    text-transform: capitalize;
+    opacity: 1;
+    transition: all 0.5s ease-in-out;
+    border-radius: 1rem;
+    padding: 0.5rem;
+    width: fit-content;
+    color: #5DB59B;
+
+}
+
+.global-grid .Histoire .Histoire-Info .Histoire-genre p {
+    font-size: 1.2rem;
+    font-weight: 600;
+    text-transform: capitalize;
+    opacity: 1;
+    transition: all 0.5s ease-in-out;
+    border: #5DB59B solid 3px;
+    border-radius: 1rem;
+    padding: 0.5rem;
+    width: fit-content;
+    background-color: #ffff;
+    filter: grayscale(0%);
+    color: #5DB59B;
+
+}
+
+.global-grid .Histoire a img {
+    width: 100%;
+    height: 50%;
+    object-fit: cover;
+    transition: all 0.5s ease-in-out;
+    border-radius: 2rem;
+    aspect-ratio: 1/1;
+    resize: both;
+    border: #000 solid 3px;
+}

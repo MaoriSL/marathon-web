@@ -1,43 +1,44 @@
-html {
-    position: relative;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-
 body {
     background-color: #ffffff;
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
 }
 
 body .container {
     background-color: #fff;
     border-radius: 5px;
-
-    max-width: 1200px;
+    padding: 2rem;
     margin: 0 auto;
+    max-width: 1200px;
 }
 
 body header {
-    background-color: #ffffff;
+    background-color: #5DB59B;
     border-bottom: 1px solid #e7e7e7;
     display: flex;
     justify-content: space-between;
-    padding-bottom: 1.2rem;
-    padding-top: 2rem;
+    padding: 2rem 0;
     width: 100%;
     z-index: 1;
+    align-content: center;
+    align-items: center;
+    color: #fff;
 }
 
-body header nav {
+body header .logo-nav {
     display: flex;
     justify-content: space-evenly;
-    align-items: end;
-    margin-right: 2rem;
+    align-items: center;
+
 }
 
-body header nav a {
-    color: #000;
-    font-size: 1.2rem;
+body header .logo-nav a {
+    color: #fff;
+    font-size: 1.5rem;
     font-weight: 600;
     text-decoration: none;
     display: flex;
@@ -45,19 +46,131 @@ body header nav a {
     justify-content: center;
     padding: 0.5rem 0;
     /* width: 100%; */
-    margin: 0 0.5rem
+    margin: 0 0.5rem;
+    border-radius: 2rem;
+    transition: all 0.5s ease-in-out;
+
 }
 
-body header nav a:hover {
+body header img {
+
+    object-fit: cover;
+    /* border-radius: 50%; */
+    margin-left: 2rem;
+}
+
+body header nav {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-right: 2rem;
+}
+
+body header nav .nav .login {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-right: 2rem;
+}
+
+body header nav .nav .login a {
+    color: #5DB59B;
+    font-size: 1.5rem;
+    font-weight: 600;
     text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.5rem 0;
+    /* width: 100%; */
+    margin: 0 0.5rem;
+    border: #ffffff solid 2px;
+    border-radius: 2rem;
+    transition: all 0.5s ease-in-out;
+    padding: 1rem;
+    background-color: #ffffff;
+
 }
 
-body header nav a.active {
-    border-bottom: 2px solid #000;
+body header nav .nav .login a.register {
+    color: #ffffff;
+    font-size: 1.5rem;
+    font-weight: 600;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.5rem 0;
+    /* width: 100%; */
+    margin: 0 0.5rem;
+    border: #ffffff solid 2px;
+    border-radius: 2rem;
+    transition: all 0.5s ease-in-out;
+    padding: 1rem;
+    background-color: #5DB59B;
+}
+
+.top {
+    padding: 0 2rem;
+}
+
+
+.Intro {
+    height: fit-content;
+
+}
+
+.Intro h1 {
+    font-size: 3rem;
+    font-weight: 600;
+    padding: 1rem;
+    color: black;
+}
+
+
+
+.Intro p {
+    font-size: 1.7rem;
+    font-weight: 600;
+
+    padding: 1rem;
+    color: black;
+}
+
+.Intro p.lorem {
+    font-size: 1.1rem;
+    font-weight: 600;
+    padding: 1rem;
+    color: black;
+    width: 92%;
+}
+
+.href {
+    display: flex;
+    text-decoration: none;
+    color: #000;
+    transition: all 0.5s ease-in-out;
+    border-radius: 2rem;
+    overflow: hidden;
+    /* margin: 2rem; */
+    width: 100%;
+}
+
+.href a {
+
+    text-decoration: none;
+    color: white;
+    font-size: 1.5rem;
+    ;
+    transition: all 0.5s ease-in-out;
+    border-radius: 2rem;
+    overflow: hidden;
+    margin-right: 1rem;
+    padding: 1rem;
+    background-color: #5DB59B;
 }
 
 .global-swiper {
-    width: 100%;
     text-align: center;
     font-size: x-large;
     /* height: 300px; */
@@ -65,7 +178,15 @@ body header nav a.active {
     border-radius: 2rem;
     overflow: hidden;
     /* margin: 2rem auto; */
-    background-color: #D9D9D9;
+    padding: 1rem;
+    background-color: #5DB59B;
+}
+
+.global-swiper h2 {
+    font-size: 3rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: #ffffff;
 }
 
 .swiper1 {
@@ -79,7 +200,7 @@ body header nav a.active {
 }
 
 .swiper-wrapper {
-    width: 130%;
+    width: 100%;
     height: 100%;
     display: flex;
     align-items: center;
@@ -89,20 +210,26 @@ body header nav a.active {
 .swiper-slide {
     text-align: center;
     font-size: 18px;
-    background: #fff;
+    background: #fcfcfc;
     display: flex;
     justify-content: center;
     align-items: center;
+    transition: all 0.5s ease-in-out;
+    border-radius: 2rem;
+    overflow: hidden;
+    margin: 2rem;
+    /* padding: 2rem; */
 }
 
 .tuile {
     position: relative;
-    width: 100%;
-    height: 100%;
-    border-radius: 2rem;
+    width: 50%;
+    height: 50%;
+    border-radius: 3rem;
     overflow: hidden;
     transition: all 0.5s ease-in-out;
-
+    margin: 2rem;
+    background-color: #404242;
 }
 
 .overlay {
@@ -150,9 +277,29 @@ body header nav a.active {
     justify-content: center;
     align-items: center;
     opacity: 1;
+    border-radius: 2rem;
     transition: all 0.5s ease-in-out;
 }
 
+.genre {
+    text-align: center;
+    /* font-size: x-large; */
+    /* height: 300px; */
+    margin-top: 2rem;
+    border-radius: 2rem;
+    overflow: hidden;
+    margin: 2rem auto;
+    /* background-color: #5DB59B; */
+    padding: 1rem;
+
+}
+
+.genre h2 {
+    font-size: 3rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: black;
+}
 
 .swiper2 {
     width: 100%;
@@ -162,33 +309,28 @@ body header nav a.active {
     overflow: hidden;
     margin: 2rem auto;
     padding: 2rem;
-
+    /* background-color: #5DB59B; */
 }
 
 .swiper2 a {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100%;
-    width: 100%;
     text-decoration: none;
     color: #000;
+    transition: all 0.5s ease-in-out;
+    border-radius: 2rem;
+    overflow: hidden;
+    margin: 2rem;
+    padding: 2rem;
+    width: 100vh;
+    /* background-color: #5DB59B; */
 }
 
 .swiper2 a:hover {
     text-decoration: none;
 }
 
-.swiper2 a p {
-    font-size: 4rem;
-    font-weight: 600;
-    text-transform: capitalize;
-    text-align: center;
-    opacity: 1;
-    transition: all 0.5s ease-in-out;
-    text-orientation: mixed;
-    writing-mode: vertical-lr;
-}
 
 .swiper2 a:hover p {
     opacity: 0.5;
@@ -208,7 +350,7 @@ body header nav a.active {
 
 }
 
-.swiper2 a p.text-h1 {
+.swiper2 a p {
     font-size: 4rem;
     font-weight: 600;
     text-transform: capitalize;
@@ -219,26 +361,21 @@ body header nav a.active {
     writing-mode: horizontal-tb;
 }
 
-.swiper2 a p.text-h2 {
-    font-size: 4rem;
-    font-weight: 600;
-    text-transform: capitalize;
+.Infos {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: row-reverse;
     text-align: center;
-    opacity: 1;
-    transition: all 0.5s ease-in-out;
-    text-orientation: mixed;
-    writing-mode: horizontal-tb;
-}
+    /* margin: 2rem;
+    margin-bottom: 3rem; */
+    padding: 2rem;
+    /* width: 100%; */
+    height: fit-content;
+    background-color: #ffffff;
+    border-radius: 5px;
 
-.swiper2 a p.text-h3 {
-    font-size: 4rem;
-    font-weight: 600;
-    text-transform: capitalize;
-    text-align: center;
-    opacity: 1;
-    transition: all 0.5s ease-in-out;
-    text-orientation: mixed;
-    writing-mode: horizontal-tb;
+    transition: all 0.3s ease-in-out;
 }
 
 .Infos .Left {
@@ -257,18 +394,34 @@ body header nav a.active {
 }
 
 .Infos .Left p {
-    font-size: 1.2rem;
+    font-size: 1rem;
     font-weight: 400;
     margin-bottom: 1rem;
+    text-align: right;
 }
 
 .Infos .Right {
-    width: 50%;
-    height: 100%;
+    width: fit-content;
+    height: fit-content;
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: center;
+    margin: 2rem;
     padding: 2rem;
+    border: #404242 solid 2px;
+    border-radius: 2rem;
+    background-color: #ffffff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.568);
+}
+
+
+
+.Infos .Right .Fonction ul li {
+    font-size: 2.2rem;
+    font-weight: 400;
+    margin-bottom: 1rem;
+
 }
 
 .Infos .Right h2 {
@@ -281,6 +434,42 @@ body header nav a.active {
     list-style: none;
     padding: 0;
     margin: 0;
+    width: fit-content;
+    text-align: center;
+    border-radius: 2rem;
+    padding: 1rem;
+    margin: 0 auto;
+}
+
+.Infos .Right ul a {
+    color: #fff;
+    font-size: 1.2rem;
+    font-weight: 600;
+    text-decoration: none;
+
+    padding: 0.5rem 0;
+    /* width: 100%; */
+    background-color: #5DB59B;
+    transition: all 0.5s ease-in-out;
+}
+
+.Infos .Right ul a li {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    background-color: #5DB59B;
+    width: fit-content;
+    text-align: center;
+    border-radius: 2rem;
+    padding: 1rem;
+    margin: 0 auto;
+}
+
+
+.Infos .Right ul a:hover {
+    text-decoration: none;
+    background-color: #404242;
+    transition: all 0.5s ease-in-out;
 }
 
 .Infos .Right ul li {
@@ -294,15 +483,16 @@ body header nav a.active {
 }
 
 .foot {
-    background-color: #ffffff;
-    border-top: 1px solid #e7e7e7;
+    background-color: #5DB59B;
+    border-top: 2px solid #e7e7e7;
     display: flex;
     justify-content: space-evenly;
     width: 100%;
     z-index: 1;
-    border-radius: 2rem;
+    /* border-radius: 2rem; */
     text-align: center;
-
+    margin-bottom: -1rem;
+    padding: 2rem;
 }
 
 .foot ul {
@@ -317,13 +507,13 @@ body header nav a.active {
 }
 
 .foot li a {
-    color: #000;
+    color: #fff;
     font-size: 1.2rem;
     font-weight: 600;
     text-decoration: none;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: end;
     padding: 0.5rem 0;
     /* width: 100%; */
     margin: 0 0.5rem
