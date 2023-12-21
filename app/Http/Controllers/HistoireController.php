@@ -89,7 +89,7 @@ class HistoireController extends Controller
         $newhistoire->titre = $request->input('titre');
         $newhistoire->pitch = $request->input('pitch');
         $newhistoire->photo = 'images/logo.jpg';
-        $newhistoire->active = (int)$request->boolean('active');
+        $newhistoire->active = $request->input('active');
         $newhistoire->genre_id = $request->input('genre_id');
         $newhistoire->user_id = $request->input('user_id');
 
@@ -102,11 +102,11 @@ class HistoireController extends Controller
             $newhistoire->photo = $path;
         }
         $parsedown = new Parsedown();
-        $newhistoire->pitch_html = $parsedown->text($request->input('pitch'));
+        $newhistoire->pitch = $parsedown->text($request->input('pitch'));
 
         $newhistoire->save();
 
-        return redirect()->route('histoires.show', ['histoire' => $newhistoire->id]);
+        return redirect()->route('chapitre.edit', ['id' => $newhistoire->id]);
     }
 
     public function updateImage(Request $request)
@@ -151,7 +151,8 @@ class HistoireController extends Controller
 
     public function editChapitre($id){
         $histoire = Histoire::find($id);
-        return view('histoires.edit', ['histoire' => $histoire]);
+        $chapitres = $histoire->chapitres;
+        return view('histoires.edit', ['histoire' => $histoire, 'chapitres' => $chapitres]);
     }
 
     public function destroy(Histoire $histoire)
