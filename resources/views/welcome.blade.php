@@ -4,9 +4,10 @@
 <div class="container">
     <div class="top">
         <div class="Intro">
-            <h1>Bienvenue sur NaraVerse</h1>
+            <h1>Bienvenue sur NarraVerse</h1>
             <p>Le site de référence pour les histoires dont vous êtes le héros</p>
-            <p class="lorem">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+            <p class="lorem">NarraVerse est bien plus qu'une simple plateforme d'histoires. C'est un univers dynamique où chaque décision que vous prenez influence le cours de l'histoire. <br> Plongez dans des récits captivants, explorez des mondes fantastiques, et forgez votre propre destinée. <br>
+                NarraVerse met le pouvoir entre vos mains. <br> À chaque tournant, à chaque croisée des chemins, vous prenez des décisions qui sculptent l'intrigue. <br> Soyez le héros de votre propre histoire et explorez les multiples facettes de chaque scénario.</p>
         </div>
         <div class="href">
             <a href="{{route('histoires.index')}}">Découvrir le catalogue</a>
@@ -35,8 +36,9 @@
     </div>
     <div class="Infos" style="display: flex;">
         <div class="Left">
-            <h2>C'est quoi NaraVerse</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+            <h2>C'est quoi NarraVerse</h2>
+            <p>NaraVerse est plus qu'une simple plateforme d'histoires interactives. C'est un voyage où chaque clic, chaque mot, chaque choix, façonne une expérience unique. Préparez-vous à vivre des récits qui transcendent l'ordinaire et plongez dans l'infini des possibilités narratives.
+                Prêt à écrire votre histoire dans NaraVerse ? Rejoignez-nous dès aujourd'hui et commencez votre aventure !</p>
         </div>
         <div class="Right">
             <h2> Fonctionnalitées des membres </h2>
