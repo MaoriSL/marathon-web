@@ -53,7 +53,15 @@
         </div>
     </div>
 </div>
-
+    @auth
+        @if (Auth::id() === $histoire->user_id)
+            <form action="{{ route('histoires.destroy', $histoire->id) }}" method="POST">
+                @csrf
+                @method('DELETE')
+                <button type="submit">Supprimer l'histoire</button>
+            </form>
+        @endif
+    @endauth
 <div class="global-avis">
     <div class="avis">
         <div class="avis-titre">
@@ -65,6 +73,15 @@
             <p class="membres"> Membres Ecrivains</p>
             <p>{{ $avis->contenu }}</p>
             <p>Posté le {{ $avis->created_at}}</p>
+            @auth
+                @if (Auth::id() === $avis->user_id)
+                    <form action="{{ route('avis.destroyComment', $avis->id) }}" method="POST">
+                        @csrf
+                        @method('DELETE')
+                        <button type="submit">Supprimer</button>
+                    </form>
+                @endif
+            @endauth
         </div>
         @endforeach
     </div>
