@@ -25,7 +25,7 @@
 <body>
     <header>
         <div class="logo-nav">
-            <img src="/~but23_groupe8/images/logo-nara.png" alt="Logo de l'entreprise">
+            <img src="/~but23_groupe8/images/Logo-nara.png" alt="Logo de l'entreprise">
             <nav class="fonctions">
                 <a href="{{route('index')}}">Accueil</a>
                 <a href=" {{route('histoires.index')}}">Catalogue</a>
