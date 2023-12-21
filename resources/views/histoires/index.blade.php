@@ -20,6 +20,14 @@
                 <p>{{$histoire->pitch}}</p>
             </div>
             @endauth
+            <div class="avis">
+                <p>Nombre de lectures terminées : {{ $histoire->terminees->count() }}</p>
+                <p><i class="commentaire">
+                        <i class="fas fa-comment-dots"></i>
+                    </i> {{ $histoire->avis->count() }}</p>
+                <p><i class="fas fa-thumbs-up"></i> {{ $histoire->avis->where('positive', true)->count() }}</p>
+
+            </div>
             <div class="Histoire-genre">
                 <p>#{{ $histoire->genre["label"]}}</p>
             </div>
