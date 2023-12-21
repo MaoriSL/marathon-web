@@ -50,3 +50,7 @@ Route::get('/user/{id}', [UserController::class, 'show'])->name('user.show');
 Route::post('/histoires/updateImage', [HistoireController::class, 'updateImage'])->name('histoire.updateImage');
 
 Route::post('/histoires/storeCommentaire', [HistoireController::class, 'storeComment'])->name('histoires.storeComment');
+
+Route::post('/histoires/storeChapitre', [ChapitreController::class, 'store'])->name('chapitre.store');
+
+Route::get('/histoires/{id}/editHistoire', [HistoireController::class, 'editChapitre'])->name('chapitre.edit');

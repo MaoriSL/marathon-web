@@ -143,4 +143,9 @@ class HistoireController extends Controller
 
         return back()->with('success', 'Avis ajouté avec succès');
     }
+
+    public function editChapitre($id){
+        $histoire = Histoire::find($id);
+        return view('histoires.edit', ['histoire' => $histoire]);
+    }
 }

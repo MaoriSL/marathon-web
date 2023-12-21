@@ -24,7 +24,7 @@
 
 <body>
     <header>
-        <img src="" alt="NaraVerse">
+        <img src="../images/logo.png" alt="NaraVerse">
         <nav>
             <a href="{{route('index')}}">Accueil</a>
             <a href=" {{route('histoires.index')}}">Catalogue</a>
