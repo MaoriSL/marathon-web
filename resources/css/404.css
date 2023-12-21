@@ -1,0 +1,53 @@
+main {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 0.2rem;
+    padding: 1rem;
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+    justify-content: center;
+}
+
+
+.text h1 {
+    font-size: 10rem;
+    font-weight: 600;
+    text-transform: capitalize;
+    opacity: 1;
+    transition: all 0.5s ease-in-out;
+    color: black;
+    text-align: center;
+    margin-bottom: 0;
+}
+
+.text h2 {
+    font-size: 5rem;
+    font-weight: 600;
+    text-transform: capitalize;
+    opacity: 1;
+    width: 60vh;
+    transition: all 0.5s ease-in-out;
+    color: black;
+    margin: auto;
+    padding: 2rem
+}
+
+.text a {
+    font-size: 2rem;
+    font-weight: 600;
+    text-transform: capitalize;
+    opacity: 1;
+    transition: all 0.5s ease-in-out;
+    color: black;
+    margin: auto;
+    padding: 2rem;
+    text-decoration: none;
+    border: 1px solid black;
+    border-radius: 2rem;
+    width: fit-content;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
