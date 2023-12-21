@@ -43,7 +43,7 @@ class DatabaseSeeder extends Seeder
             'titre' => 'z1 ou la vie d\'un demi-octet',
             'pitch' => "z1 n'a pas une vie très compliquée. Quelque soit la question, la réponse se limite à 0 ou 1. 
              En même temps, cela lui permet au mois de représenter des nombres en mode binaire. C'est déjà cela !",
-            'photo'  => "/images/bit-1.webp",
+            'photo'  => "/storage/images/bit-1.webp",
             'user_id' => 1,
             'active'=>1,
             'genre_id'=>1
@@ -159,8 +159,7 @@ class DatabaseSeeder extends Seeder
         DB::table('histoires')->insert([
             'titre' => 'THX1138',
             'pitch' => "THX1138 est un robot mal dans sa peau et qui cherche un sens à sa vie.",
-            'photo'  => "https://m.media-amazon.com/images/M/MV5BYzRiY2I3M2EtODJkMy00NTEyLTgxNmYtYzYwYjk1ZDE1MDE1XkEyXkFqcGdeQXVyNTAyODkwOQ@@.
-_V1_UY1200_CR111,0,630,1200_AL_.jpg",
+            'photo'  => "/storage/images/THX1138.jpg",
             'user_id' => 1,
             'genre_id' => 1,
             'active' => 1
@@ -356,8 +355,7 @@ organique et robotique. En route...",
             "id" => 100,
             'titre' => 'THX1138 -- Le retour',
             'pitch' => "THX1138 est un robot mal dans sa peau et qui cherche un sens à sa vie.",
-            'photo'  => "https://m.media-amazon.com/images/M/MV5BYzRiY2I3M2EtODJkMy00NTEyLTgxNmYtYzYwYjk1ZDE1MDE1XkEyXkFqcGdeQXVyNTAyODkwOQ@@.
-_V1_UY1200_CR111,0,630,1200_AL_.jpg",
+            'photo'  => "/storage/images/THX1138.jpg",
             'user_id' => 1,
             'genre_id' => 1,
             'active' => 0
