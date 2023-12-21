@@ -18,4 +18,17 @@
     @else
         <p>Aucune histoire trouvée</p>
     @endif
+
+    <div>
+        <img src="{{ Auth::user()->avatar ? asset('storage/' . Auth::user()->avatar) : asset('default_avatar.png') }}">
+        <form action="{{ route('profile.updateAvatar') }}" method="POST" enctype="multipart/form-data">
+            @csrf
+            <input type="file" name="avatar" accept="image/*">
+            <button type="submit">Modifier l'avatar</button>
+        </form>
+        <form action="{{ route('profile.deleteAvatar') }}" method="POST">
+            @csrf
+            <button type="submit">Supprimer l'avatar</button>
+        </form>
+    </div>
 @endsection
